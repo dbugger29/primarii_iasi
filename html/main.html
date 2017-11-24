@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Primarii Iasi</title>
+    <style>
+      #map {
+       height: 660px;
+       width: 800px;
+       overflow: hidden;
+       float: left;
+       border: thin solid #333;
+	   margin: 10;
+       }
+    </style>
+	<script src="./resources/geoxml3.js"></script>
+  </head>
+  <body>
+    <div id="map"></div>
+    <div id="capture">
+	   <a href="/raspunsuri_primarii/">raspunsuri</a>
+	</div>
+    <script>
+      var map;
+    //  var src = '/Iasi_take3.kml?dl=0';
+
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: new google.maps.LatLng(47.14919389, 27.60232544),
+          zoom: 9,
+		 //disableDefaultUI: true
+        });
+		var myParser = new geoXML3.parser({map: map,  singleInfoWindow: true });
+			myParser.parse("./resources/Iasi_take3.kml");
+			};
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgnBiGpcDprjMrSHFEYCiTebLfs-j7NM8&callback=initMap">
+    </script>
+  </body>
+</html>
