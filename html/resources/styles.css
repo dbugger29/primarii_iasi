@@ -1,0 +1,204 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, dl, dt, dd, ol, fieldset, form, label,
+legend, caption, article, aside, canvas, details,
+embed, figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, ul, li {
+  vertical-align: baseline;
+  font-size: 100%;
+  font: inherit;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  font-style: normal; }
+
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+html, body {
+  height: 100%; }
+
+*,
+*::before,
+*::after {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.clearfix {
+  display: inline-block;
+  width: 100%;
+  height: 75px;
+  float: left; }
+
+html, body, div, span, applet, object, iframe {
+  
+  display: inline-block;
+  text-align: center;
+  padding: 0;
+  border: 0;
+  margin: 0; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, div {
+  display: inline-block; }
+
+  
+  a {
+	color: #4272db;
+	text-decoration:none;
+	cursor:pointer;
+  }
+ a:hover{
+	 font-weight:bold;
+ }
+ 
+html, body {
+  height: 100%; }
+
+*,
+*::before,
+*::after {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+font-family: sans-serif;
+color: #606164;
+line-height: 1.5;
+font-size: 14px;
+min-height: 100%;
+height: 100%;
+width: 95%; }
+/* end from smaranda */
+
+
+#map {
+min-height: 550px;
+max-height: 100%;
+width: 100%;
+height: 100%;
+border: 1px solid #000;
+margin: 5px 0px;
+}
+#test{
+height: 100%;
+width: 100%;
+display: inline-block;
+}
+#legend {font-family: Arial, sans-serif;background: #fff;padding: 5px;margin: 5px 0px;display: inline-block;border: 1px solid #000;width: 100%;text-align: left;}
+#legend ul{
+padding:2px;
+text-align: left;
+}
+#legend h3 {
+	font-weight: 700;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	padding-top: 15px;
+}
+.legend-section {
+	width: 33%;
+	text-align: left;
+	vertical-align: top;
+	display: inline-block;
+	height: 100%;
+	min-height: 100px;
+	padding: 10px;
+	border: 1px solid #b3b3b3;
+	margin-bottom: 10px;
+}
+.legend-section ul li {
+	display: inline-block;
+}
+.legend-section .legend-scale {
+	display: block;
+}	  
+.legend-title {
+text-align: left;
+margin-bottom: 8px;
+font-weight: bold;
+font-size: 90%;
+}
+.legend-scale ul li {
+display: inline-block;
+padding-left:25px;
+margin-bottom: 6px;
+text-align: left;
+font-size: 80%;
+list-style: none;
+}
+ul.legend-labels li span {
+display: block;
+float: left;
+height: 15px;
+width: 15px;
+opacity: 0.5;
+margin-right: 5px;
+}
+ul.legend-labels li text {
+padding-left:2px;
+}
+
+
+
+
+.geoxml3_infowindow {
+}
+.geoxml3_infowindow h3 {
+	
+	font-weight: bold;
+}
+.geoxml3_infowindow h4 b {
+	
+	font-size: 12px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.geoxml3_infowindow h4 span {
+	
+	color:red;
+}
+
+#detalii_primarie {
+	border: 1px solid #b3b3b3;
+	width:100%;
+	
+}
+
+#chart_details {
+	width:55%;
+	float:left;
+	border-right:1px solid #b3b3b3;
+	padding:10px;
+}
+#observatii_primarie 
+{
+	width:45%;
+	float:left;
+	padding:10px;
+}
+
+@media screen and (max-width: 400px) {
+	.legend-section {
+		width: 100%;
+		min-height: auto;
+		margin-bottom: 10px;
+	}
+	#chart_details {
+		width:100%;	
+		border-right: none;
+	}
+	#chart_details svg {
+		padding-bottom: 15em;
+	}
+	#observatii_primarie {
+		width:100%;	
+	}
+}

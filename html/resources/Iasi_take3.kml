@@ -36,7 +36,10 @@
     </StyleMap>
     <Placemark>
       <name>Gorban</name>
-      <description>Comune</description>
+      <description><![CDATA[
+	  <a href="./raspunsuri_primarii/Ruginoasa.pdf" target="_blank">link</a>
+]]></description>
+<geDirections> rfgdfgdfgd </geDirections>
       <styleUrl>#poly-0288D1-201-76</styleUrl>
       <Polygon>
         <outerBoundaryIs>
@@ -3827,7 +3830,7 @@
       </Polygon>
     </Placemark>
     <Placemark>
-      <name>Osoi</name>
+      <name>Comarna</name>
       <description>Comune</description>
       <styleUrl>#poly-0288D1-201-76</styleUrl>
       <Polygon>
@@ -6996,7 +6999,7 @@
       </Polygon>
     </Placemark>
     <Placemark>
-      <name>Madarjac</name>
+      <name>Madirjac</name>
       <description>Comune</description>
       <styleUrl>#poly-0288D1-201-76</styleUrl>
       <Polygon>
@@ -11249,7 +11252,7 @@
       </Polygon>
     </Placemark>
     <Placemark>
-      <name>Alexandru I. Cuza</name>
+      <name>Alexandru Ioan Cuza</name>
       <description>Comune</description>
       <styleUrl>#poly-0288D1-201-76</styleUrl>
       <Polygon>
@@ -13506,7 +13509,7 @@
       </Polygon>
     </Placemark>
     <Placemark>
-      <name>Bosia</name>
+      <name>Ungheni</name>
       <description>Comune</description>
       <styleUrl>#poly-0288D1-201-76</styleUrl>
       <Polygon>

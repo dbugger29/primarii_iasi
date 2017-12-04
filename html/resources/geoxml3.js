@@ -1166,7 +1166,6 @@ function processStyleUrl(node) {
   var createMarker = function (placemark, doc) {
     // create a Marker to the map from a placemark KML object
     var icon = placemark.style.icon;
-
     if ( !icon.marker && icon.img ) {
       // yay, single point of failure is holding up multiple markers...
       icon.markerBacklog = icon.markerBacklog || [];

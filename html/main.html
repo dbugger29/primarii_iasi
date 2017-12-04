@@ -1,39 +1,298 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
+  <link rel="shorcut icon" href="./resources/favicon.png"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta charset="utf-8"/>
     <title>Primarii Iasi</title>
-    <style>
-      #map {
-       height: 660px;
-       width: 800px;
-       overflow: hidden;
-       float: left;
-       border: thin solid #333;
-	   margin: 10;
-       }
-    </style>
+    <link href="./resources/styles.css" rel="stylesheet" type="text/css"/>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 	<script src="./resources/geoxml3.js"></script>
+	<script src="./resources/detalii_primarii.js"></script>
+	
   </head>
   <body>
-    <div id="map"></div>
-    <div id="capture">
-	   <a href="/raspunsuri_primarii/">raspunsuri</a>
-	</div>
-    <script>
-      var map;
-    //  var src = '/Iasi_take3.kml?dl=0';
+  
+  <div id="test"> 
+    
+	<div id="legend">
+	<legend><h3>Selectie dupa:</h3></legend>
+	  <ul class="radio"> 
+		<div class="legend-section">
+			<input type="radio" id="opt_partid"
+            name="selectie_primarii" value="partid" checked="checked" onclick="modifyMap(this.value)">
+			<label for="opt_partid">Partid</label><br/>
+			 <div class='legend-scale'>
+			  <ul class='legend-labels'>
+				<li><span style='background:red;'></span>PSD</li>
+				<li><span style='background:blue;'></span>PNL</li>
+				<li><span style='background:green;'></span>PMP</li>
+				<li><span style='background:yellow;'></span>UNPR</li>
+				<li><span style='background:gray;'></span>N/A</li>
+			  </ul>
+			</div>
+		</div>
 
+		<div class="legend-section">
+			<input type="radio" id="opt_marire"
+			   name="selectie_primarii" value="marire" onclick="modifyMap(this.value)">
+			<label for="opt_marire">Marire</label><br/>
+			 <div class='legend-scale'>
+			  <ul class='legend-labels'>
+				<li><span style='background:lightseagreen;'></span>Nu</li>
+				<li><span style='background:yellow;'></span><25% (Fonduri europene)</li>
+				<li><span style='background:orangered;'></span><50%</li>
+				<li><span style='background:gray;'></span>N/A</li>
+			  </ul>
+			</div>
+		</div>
+			
+		<div class="legend-section">
+			<input type="radio" id="opt_raspuns"
+		   name="selectie_primarii" value="raspuns" onclick="modifyMap(this.value)">
+			<label for="opt_raspuns">Raspuns</label> 
+			 <div class='legend-scale'>
+			  <ul class='legend-labels'>
+				<li><span style='background:aqua;'></span>DA</li>
+				<li><span style='background:coral;'></span>Incomplet</li>
+				<li><span style='background:brown;'></span>NU</li>
+			  </ul>
+			</div>
+		</div>		
+	  </ul> 
+	</div> <!-- end #legend -->
+	
+	<div id="map"></div>
+  </div><!-- end .test -->
+	<div id="detalii_primarie">
+		<div id="chart_details" name="detalii_primarie">
+		   <!-- locatie charturi -->
+		</div>
+		<div id="observatii_primarie">
+			test
+		</div>
+	</div>
+	<script>
+      var map;
+	  var geoXmlDoc;
+	  function setTooltipDetails(poly)
+	  {
+		var content = 
+		"<div class=\"geoxml3_infowindow geoxml3_style_poly-0288D1-1000-76\"><h3>Comuna "+  poly.title+ "</h3>"+
+		"<div>";  
+		if( detalii_primarii[poly.title.toUpperCase()].primar ) 
+			content+= "<h4>Primar:<b>" + detalii_primarii[poly.title.toUpperCase()].primar + "</b></h4>";
+		if( detalii_primarii[poly.title.toUpperCase()].partid ) 
+			content+= "<h4>Partid:<b>" + detalii_primarii[poly.title.toUpperCase()].partid + "</b></h4>";
+		if( detalii_primarii[poly.title.toUpperCase()].salariu_2017 ) 
+			content+= "<h4> Salariu: <b>" + detalii_primarii[poly.title.toUpperCase()].salariu_2017 + "</b></h4>";
+		else
+			content+= "<h4> Salariu:<b>N/A</b></h4>";
+		if( detalii_primarii[poly.title.toUpperCase()].raspuns ) 
+		{
+			var crt_rasp = detalii_primarii[poly.title.toUpperCase()].raspuns;
+			if(typeof crt_rasp == "string")
+				content+= "<a href=\"" + crt_rasp + "\" target=\"_blank\">Datele Oferite</a><br/>";
+			else
+			{
+				content+= "<h4>Datele Oferite: </h4>";
+				for(var idx = 0; idx< crt_rasp.length; idx++)
+				{
+					content+= "<a href=\"" + crt_rasp[idx] + "\" target=\"_blank\">"+ (idx+1)+"</a> ";
+				}
+				content += "<br/>";
+			}
+		}
+		else
+			content+= "<h4><span>Fara raspuns</span></h4>";
+		content += "<a href=\"#detalii_primarie\" onclick=\"detalii_primarie('" + poly.title + "')\">Mai multe</a>" +
+		"</div>" +
+		"</div>";
+		poly.infoWindowOptions.content = content;
+	  }
+	  function highlightPoly(poly, polynum, color) {
+		  if(color && color.length > 0 )
+			poly.setOptions({fillColor: color});
+		  google.maps.event.addListener(poly,"mouseover",function() {
+			this.setOptions({fillColor: "#000000"});
+			new google.maps.event.trigger( this, 'click',{});
+		  });
+		  
+		  google.maps.event.addListener(poly,"mouseout",function() {
+		  this.setOptions({fillColor:  this.default_color });
+		  });
+		   google.maps.event.addListener(poly,"click",function() {
+		  this.setOptions({fillColor: "#000000"});
+		  });
+	    }   
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: new google.maps.LatLng(47.14919389, 27.60232544),
           zoom: 9,
-		 //disableDefaultUI: true
+		 disableDefaultUI: true,
+		  styles: [{"featureType":"landscape.natural","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#e0efef"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"hue":"#1900ff"},{"color":"#c0e8e8"}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":100},{"visibility":"simplified"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"visibility":"on"},{"lightness":700}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#7dcdcd"}]}]
+
         });
-		var myParser = new geoXML3.parser({map: map,  singleInfoWindow: true });
-			myParser.parse("./resources/Iasi_take3.kml");
+		infowindow = new google.maps.InfoWindow({minWidth:250, maxWidth:300});
+		geoXmlDoc = new geoXML3.parser({	map: map, 
+												singleInfoWindow: true,
+												infoWindow: infowindow,
+												afterParse: useTheData,
+												//suppressInfoWindows: true,
+												processStyles: true,
+											});
+		geoXmlDoc.parse("./resources/Iasi_take5.kml");
+		function useTheData(doc)
+		{
+			geoXmlDoc = doc[0];
+			for(var j=0;j<geoXmlDoc.placemarks.length; j++)
+			{
+				if(  detalii_primarii[geoXmlDoc.placemarks[j].name.toUpperCase()] )
+				{
+					switch( detalii_primarii[geoXmlDoc.placemarks[j].name.toUpperCase()].partid )
+					{
+						case "PSD": 
+									geoXmlDoc.placemarks[j].polygon.default_color = "red";
+									highlightPoly( geoXmlDoc.placemarks[j].polygon, j, "red" );
+									break;
+									
+						case "PNL":
+									geoXmlDoc.placemarks[j].polygon.default_color = "blue";
+									highlightPoly( geoXmlDoc.placemarks[j].polygon, j, "blue" );
+									break;
+						case "PMP":
+									geoXmlDoc.placemarks[j].polygon.default_color = "green";
+									highlightPoly( geoXmlDoc.placemarks[j].polygon, j, "green" );	
+									break;
+						case "UNPR":
+									geoXmlDoc.placemarks[j].polygon.default_color = "yellow";
+									highlightPoly( geoXmlDoc.placemarks[j].polygon, j, "yellow" );	
+									break;
+						default:
+								geoXmlDoc.placemarks[j].polygon.default_color = "gray";
+								highlightPoly( geoXmlDoc.placemarks[j].polygon, j, "gray" );	
+								break;
+					}
+				}
+			}
+			for(var i=0;i<geoXmlDoc.placemarks.length; i++)
+			{
+				geoXmlDoc.placemarks[i].vars.val = {test:true};
+				setTooltipDetails(geoXmlDoc.placemarks[i].polygon);
+				highlightPoly(geoXmlDoc.placemarks[i].polygon, i);
+			}
+			google.charts.load('current', {'packages':['bar']});
+			//google.charts.setOnLoadCallback(drawChart);
+		}
+	};
+	function modifyMap(value)
+	{	
+		for(var j=0;j<geoXmlDoc.placemarks.length; j++)
+		{
+			if( detalii_primarii[geoXmlDoc.placemarks[j].name.toUpperCase()] )
+			{
+				switch(value)
+				{
+					case 'partid':
+									switch( detalii_primarii[geoXmlDoc.placemarks[j].name.toUpperCase()].partid )
+									{
+										case "PSD": 
+													geoXmlDoc.placemarks[j].polygon.default_color = "red";
+													highlightPoly( geoXmlDoc.placemarks[j].polygon, j, "red" );
+													break;
+													
+										case "PNL":
+													geoXmlDoc.placemarks[j].polygon.default_color = "blue";
+													highlightPoly( geoXmlDoc.placemarks[j].polygon, j, "blue" );
+													break;
+										case "PMP":
+													geoXmlDoc.placemarks[j].polygon.default_color = "green";
+													highlightPoly( geoXmlDoc.placemarks[j].polygon, j, "green" );	
+													break;
+										default:
+												geoXmlDoc.placemarks[j].polygon.default_color = "gray";
+												highlightPoly( geoXmlDoc.placemarks[j].polygon, j, "gray" );	
+												break;
+									}
+									break;
+					case 'raspuns':
+							if( "raspuns" in detalii_primarii[geoXmlDoc.placemarks[j].name.toUpperCase()] && detalii_primarii[geoXmlDoc.placemarks[j].name.toUpperCase()].raspuns != null )
+							{
+								if("partial" in detalii_primarii[geoXmlDoc.placemarks[j].name.toUpperCase()] && detalii_primarii[geoXmlDoc.placemarks[j].name.toUpperCase()].partial == true )
+								{
+									geoXmlDoc.placemarks[j].polygon.default_color = "coral";
+									highlightPoly( geoXmlDoc.placemarks[j].polygon, j, "coral" );	
+									break;
+								}
+								else
+								{
+									geoXmlDoc.placemarks[j].polygon.default_color = "aqua";
+									highlightPoly( geoXmlDoc.placemarks[j].polygon, j, "aqua" );	
+									break;
+								}
+								//to do yellow
+							}
+							else
+							{
+								geoXmlDoc.placemarks[j].polygon.default_color = "brown";
+								highlightPoly( geoXmlDoc.placemarks[j].polygon, j, "brown" );
+								break;
+							}
+					case 'marire':
+							if( "salariu_p" in detalii_primarii[geoXmlDoc.placemarks[j].name.toUpperCase()] && detalii_primarii[geoXmlDoc.placemarks[j].name.toUpperCase()].salariu_p != null )
+							{
+								var crt_salary = detalii_primarii[geoXmlDoc.placemarks[j].name.toUpperCase()].salariu_p;
+								if( crt_salary <= 5800 )
+								{
+									geoXmlDoc.placemarks[j].polygon.default_color = "lightseagreen";
+									highlightPoly( geoXmlDoc.placemarks[j].polygon, j, "lightseagreen" );	
+									break;
+								}
+								else
+								{
+									geoXmlDoc.placemarks[j].polygon.default_color = "orangered";
+									highlightPoly( geoXmlDoc.placemarks[j].polygon, j, "orangered" );	
+									break;
+								}
+							}
+							else
+							{
+								geoXmlDoc.placemarks[j].polygon.default_color = "gray";
+								highlightPoly( geoXmlDoc.placemarks[j].polygon, j, "gray" );
+								break;
+							}
+							
+				}
+			}
+		}
+	}
+	
+	function detalii_primarie(nume_primarie)
+	{	
+		console.info("Intra aiciii", nume_primarie);
+		nume_p = nume_primarie.toUpperCase();
+		if(detalii_primarii[nume_p].salariu_p && detalii_primarii[nume_p].salariu_vp && detalii_primarii[nume_p].salariu_s )
+		{
+			var data = google.visualization.arrayToDataTable([
+			  ['','Primar', 'Vice Primar', 'Secretar', 'Salariu minim/ec'],
+			  ['2017', detalii_primarii[nume_p].salariu_p, detalii_primarii[nume_p].salariu_vp, detalii_primarii[nume_p].salariu_s, 1900],
+			]);
+
+			var options = {
+			  chart: {
+				title: 'Comuna ' + nume_primarie,
+				subtitle: 'Salariu brut/luna pe anul 2017',
+			  },
+			  bars:'vertical',
+			  vAxis:{format: 'decimal' },
+			  legend: "bottom"
 			};
+
+			var chart = new google.charts.Bar(document.getElementById('chart_details'));
+
+			chart.draw(data, google.charts.Bar.convertOptions(options));
+		}
+	}
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgnBiGpcDprjMrSHFEYCiTebLfs-j7NM8&callback=initMap">
