@@ -69,7 +69,7 @@
 		   <!-- locatie charturi -->
 		</div>
 		<div id="observatii_primarie">
-			test
+			Detalii Primarie
 		</div>
 	</div>
 	<script>
@@ -77,15 +77,19 @@
 	  var geoXmlDoc;
 	  function setTooltipDetails(poly)
 	  {
-		var content = 
-		"<div class=\"geoxml3_infowindow geoxml3_style_poly-0288D1-1000-76\"><h3>Comuna "+  poly.title+ "</h3>"+
+		var content = "";
+		if( detalii_primarii[poly.title.toUpperCase()].type ) 
+			content = "<div class=\"geoxml3_infowindow geoxml3_style_poly-0288D1-1000-76\"><h3>" + detalii_primarii[poly.title.toUpperCase()].type + " " +  poly.title+ "</h3>"+
 		"<div>";  
+		else
+			content = "<div class=\"geoxml3_infowindow geoxml3_style_poly-0288D1-1000-76\"><h3>Comuna "+  poly.title+ "</h3>"+
+		"<div>";
 		if( detalii_primarii[poly.title.toUpperCase()].primar ) 
 			content+= "<h4>Primar:<b>" + detalii_primarii[poly.title.toUpperCase()].primar + "</b></h4>";
 		if( detalii_primarii[poly.title.toUpperCase()].partid ) 
 			content+= "<h4>Partid:<b>" + detalii_primarii[poly.title.toUpperCase()].partid + "</b></h4>";
-		if( detalii_primarii[poly.title.toUpperCase()].salariu_2017 ) 
-			content+= "<h4> Salariu: <b>" + detalii_primarii[poly.title.toUpperCase()].salariu_2017 + "</b></h4>";
+		if( detalii_primarii[poly.title.toUpperCase()].s_p ) 
+			content+= "<h4> Salariu Primar: <b>" + detalii_primarii[poly.title.toUpperCase()].s_p + "</b></h4>";
 		else
 			content+= "<h4> Salariu:<b>N/A</b></h4>";
 		if( detalii_primarii[poly.title.toUpperCase()].raspuns ) 
@@ -177,7 +181,7 @@
 			}
 			for(var i=0;i<geoXmlDoc.placemarks.length; i++)
 			{
-				geoXmlDoc.placemarks[i].vars.val = {test:true};
+				//geoXmlDoc.placemarks[i].vars.val = {test:true};
 				setTooltipDetails(geoXmlDoc.placemarks[i].polygon);
 				highlightPoly(geoXmlDoc.placemarks[i].polygon, i);
 			}
@@ -239,9 +243,9 @@
 								break;
 							}
 					case 'marire':
-							if( "salariu_p" in detalii_primarii[geoXmlDoc.placemarks[j].name.toUpperCase()] && detalii_primarii[geoXmlDoc.placemarks[j].name.toUpperCase()].salariu_p != null )
+							if( "s_p" in detalii_primarii[geoXmlDoc.placemarks[j].name.toUpperCase()] && detalii_primarii[geoXmlDoc.placemarks[j].name.toUpperCase()].s_p != null )
 							{
-								var crt_salary = detalii_primarii[geoXmlDoc.placemarks[j].name.toUpperCase()].salariu_p;
+								var crt_salary = detalii_primarii[geoXmlDoc.placemarks[j].name.toUpperCase()].s_p;
 								if( crt_salary <= 5800 )
 								{
 									geoXmlDoc.placemarks[j].polygon.default_color = "lightseagreen";
@@ -271,16 +275,16 @@
 	{	
 		console.info("Intra aiciii", nume_primarie);
 		nume_p = nume_primarie.toUpperCase();
-		if(detalii_primarii[nume_p].salariu_p && detalii_primarii[nume_p].salariu_vp && detalii_primarii[nume_p].salariu_s )
-		{
+		//if(detalii_primarii[nume_p].s_p && detalii_primarii[nume_p].s_vp && detalii_primarii[nume_p].s_s )
+		//{
 			var data = google.visualization.arrayToDataTable([
 			  ['','Primar', 'Vice Primar', 'Secretar', 'Salariu minim/ec'],
-			  ['2017', detalii_primarii[nume_p].salariu_p, detalii_primarii[nume_p].salariu_vp, detalii_primarii[nume_p].salariu_s, 1900],
+			  ['2017', detalii_primarii[nume_p].s_p, detalii_primarii[nume_p].s_vp, detalii_primarii[nume_p].s_s, 1900],
 			]);
 
 			var options = {
 			  chart: {
-				title: 'Comuna ' + nume_primarie,
+				title: detalii_primarii[nume_primarie.toUpperCase()].type + " " + nume_primarie,
 				subtitle: 'Salariu brut/luna pe anul 2017',
 			  },
 			  bars:'vertical',
@@ -291,7 +295,7 @@
 			var chart = new google.charts.Bar(document.getElementById('chart_details'));
 
 			chart.draw(data, google.charts.Bar.convertOptions(options));
-		}
+		//}
 	}
     </script>
     <script async defer
