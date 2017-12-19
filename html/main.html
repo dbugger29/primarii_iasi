@@ -9,14 +9,18 @@
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 	<script src="./resources/geoxml3.js"></script>
 	<script src="./resources/detalii_primarii.js"></script>
-	
+	<script src="./resources/observatii_primarii.js"></script>
   </head>
   <body>
   
   <div id="test"> 
     
 	<div id="legend">
+	<div id="title_selection">
 	<legend><h3>Selectie dupa:</h3></legend>
+	<button type="button" onclick="calculare_salarii()" id="b_venituri">Veniturile de la 1 Ianuarie 2018</button>
+	
+	</div>
 	  <ul class="radio"> 
 		<div class="legend-section">
 			<input type="radio" id="opt_partid"
@@ -34,15 +38,16 @@
 		</div>
 
 		<div class="legend-section">
-			<input type="radio" id="opt_marire"
-			   name="selectie_primarii" value="marire" onclick="modifyMap(this.value)">
-			<label for="opt_marire">Marire</label><br/>
+			<input type="radio" id="opt_populatie"
+			   name="selectie_primarii" value="populatie" onclick="modifyMap(this.value)">
+			<label for="opt_populatie">Populatie(numar locuitori)</label><br/>
 			 <div class='legend-scale'>
 			  <ul class='legend-labels'>
-				<li><span style='background:lightseagreen;'></span>Nu</li>
-				<li><span style='background:yellow;'></span><25% (Fonduri europene)</li>
-				<li><span style='background:orangered;'></span><50%</li>
-				<li><span style='background:gray;'></span>N/A</li>
+				<li><span style='background:violet;'></span><=3000</li>
+				<li><span style='background:yellow;'></span><=5000</li>
+				<li><span style='background:indigo;'></span><=10000 </li>
+				<li><span style='background:salmon;'></span><=20000 </li>
+				<li><span style='background:seagreen;'></span>>20000</li>
 			  </ul>
 			</div>
 		</div>
@@ -64,7 +69,7 @@
 	
 	<div id="map"></div>
   </div><!-- end .test -->
-	<div id="detalii_primarie">
+	<div id="detalii_primarie" style= "visibility:hidden">
 		<div id="chart_details" name="detalii_primarie">
 		   <!-- locatie charturi -->
 		</div>
@@ -75,6 +80,21 @@
 	<script>
       var map;
 	  var geoXmlDoc;
+	  var salarii_2018 = false;
+	  var salariul_min = 1900;
+	  var infoview = null;
+	  
+	  google.charts.load("current", {packages:['corechart']});
+	  
+	  function getJsonFromUrl() {
+		  var query = location.search.substr(1);
+		  var result = {};
+		  query.split("&").forEach(function(part) {
+			var item = part.split("=");
+			result[item[0]] = decodeURIComponent(item[1]);
+		  });
+		  return result;
+	 }
 	  function setTooltipDetails(poly)
 	  {
 		var content = "";
@@ -88,10 +108,21 @@
 			content+= "<h4>Primar:<b>" + detalii_primarii[poly.title.toUpperCase()].primar + "</b></h4>";
 		if( detalii_primarii[poly.title.toUpperCase()].partid ) 
 			content+= "<h4>Partid:<b>" + detalii_primarii[poly.title.toUpperCase()].partid + "</b></h4>";
-		if( detalii_primarii[poly.title.toUpperCase()].s_p ) 
-			content+= "<h4> Salariu Primar: <b>" + detalii_primarii[poly.title.toUpperCase()].s_p + "</b></h4>";
+			
+		if(salarii_2018)
+		{
+			if( detalii_primarii[poly.title.toUpperCase()].c_p ) 
+				content+= "<h4> Salariu Primar: <b>" + detalii_primarii[poly.title.toUpperCase()].c_p * salariul_min + " lei</b></h4>";
+			else
+				content+= "<h4> Salariu:<b>N/A</b></h4>";
+		}
 		else
-			content+= "<h4> Salariu:<b>N/A</b></h4>";
+		{
+			if( detalii_primarii[poly.title.toUpperCase()].s_p ) 
+				content+= "<h4> Salariu Primar: <b>" + detalii_primarii[poly.title.toUpperCase()].s_p + " lei</b></h4>";
+			else
+				content+= "<h4> Salariu:<b>N/A</b></h4>";
+		}	
 		if( detalii_primarii[poly.title.toUpperCase()].raspuns ) 
 		{
 			var crt_rasp = detalii_primarii[poly.title.toUpperCase()].raspuns;
@@ -119,6 +150,7 @@
 			poly.setOptions({fillColor: color});
 		  google.maps.event.addListener(poly,"mouseover",function() {
 			this.setOptions({fillColor: "#000000"});
+			infoview = this.infoWindow;
 			new google.maps.event.trigger( this, 'click',{});
 		  });
 		  
@@ -126,67 +158,55 @@
 		  this.setOptions({fillColor:  this.default_color });
 		  });
 		   google.maps.event.addListener(poly,"click",function() {
+		   infoview = this.infoWindow;
 		  this.setOptions({fillColor: "#000000"});
 		  });
-	    }   
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: new google.maps.LatLng(47.14919389, 27.60232544),
-          zoom: 9,
-		 disableDefaultUI: true,
+	    }
+  
+	function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), 
+		{
+          center: new google.maps.LatLng(47.20485450000002, 27.219049725244062),
 		  styles: [{"featureType":"landscape.natural","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#e0efef"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"hue":"#1900ff"},{"color":"#c0e8e8"}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":100},{"visibility":"simplified"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"visibility":"on"},{"lightness":700}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#7dcdcd"}]}]
 
         });
-		infowindow = new google.maps.InfoWindow({minWidth:250, maxWidth:300});
+		
+		infowindow = new google.maps.InfoWindow({minWidth:250, maxWidth:600});
 		geoXmlDoc = new geoXML3.parser({	map: map, 
 												singleInfoWindow: true,
 												infoWindow: infowindow,
 												afterParse: useTheData,
-												//suppressInfoWindows: true,
 												processStyles: true,
 											});
 		geoXmlDoc.parse("./resources/Iasi_take5.kml");
+		setTimeout(function()
+		{
+			map.setCenter(new google.maps.LatLng(47.20485450000002, 27.219049725244062));
+			if(window.screen.width > 1300 )
+				map.setZoom(10);
+			else
+				if( window.screen.width > 900 ) 
+					map.setZoom(9);
+				else
+					map.setZoom(8);
+		},200);
 		function useTheData(doc)
 		{
 			geoXmlDoc = doc[0];
-			for(var j=0;j<geoXmlDoc.placemarks.length; j++)
-			{
-				if(  detalii_primarii[geoXmlDoc.placemarks[j].name.toUpperCase()] )
-				{
-					switch( detalii_primarii[geoXmlDoc.placemarks[j].name.toUpperCase()].partid )
-					{
-						case "PSD": 
-									geoXmlDoc.placemarks[j].polygon.default_color = "red";
-									highlightPoly( geoXmlDoc.placemarks[j].polygon, j, "red" );
-									break;
-									
-						case "PNL":
-									geoXmlDoc.placemarks[j].polygon.default_color = "blue";
-									highlightPoly( geoXmlDoc.placemarks[j].polygon, j, "blue" );
-									break;
-						case "PMP":
-									geoXmlDoc.placemarks[j].polygon.default_color = "green";
-									highlightPoly( geoXmlDoc.placemarks[j].polygon, j, "green" );	
-									break;
-						case "UNPR":
-									geoXmlDoc.placemarks[j].polygon.default_color = "yellow";
-									highlightPoly( geoXmlDoc.placemarks[j].polygon, j, "yellow" );	
-									break;
-						default:
-								geoXmlDoc.placemarks[j].polygon.default_color = "gray";
-								highlightPoly( geoXmlDoc.placemarks[j].polygon, j, "gray" );	
-								break;
-					}
-				}
-			}
+			
+			
 			for(var i=0;i<geoXmlDoc.placemarks.length; i++)
 			{
-				//geoXmlDoc.placemarks[i].vars.val = {test:true};
 				setTooltipDetails(geoXmlDoc.placemarks[i].polygon);
 				highlightPoly(geoXmlDoc.placemarks[i].polygon, i);
 			}
-			google.charts.load('current', {'packages':['bar']});
-			//google.charts.setOnLoadCallback(drawChart);
+			modifyMap('partid');
+			var params = getJsonFromUrl();
+			if( params && 'primaria' in params)
+			setTimeout(function(){
+				detalii_primarie(params.primaria);
+				document.getElementById('detalii_primarie').scrollIntoView();
+				}, 10);
 		}
 	};
 	function modifyMap(value)
@@ -242,27 +262,50 @@
 								highlightPoly( geoXmlDoc.placemarks[j].polygon, j, "brown" );
 								break;
 							}
-					case 'marire':
-							if( "s_p" in detalii_primarii[geoXmlDoc.placemarks[j].name.toUpperCase()] && detalii_primarii[geoXmlDoc.placemarks[j].name.toUpperCase()].s_p != null )
+					case 'populatie':
+					
+							if('populatie' in detalii_primarii[geoXmlDoc.placemarks[j].name.toUpperCase()])
 							{
-								var crt_salary = detalii_primarii[geoXmlDoc.placemarks[j].name.toUpperCase()].s_p;
-								if( crt_salary <= 5800 )
+								var crt_populatie = detalii_primarii[geoXmlDoc.placemarks[j].name.toUpperCase()].populatie;
+								switch(true)
 								{
-									geoXmlDoc.placemarks[j].polygon.default_color = "lightseagreen";
-									highlightPoly( geoXmlDoc.placemarks[j].polygon, j, "lightseagreen" );	
-									break;
+									case ( crt_populatie <= 3000 ):
+										{
+											geoXmlDoc.placemarks[j].polygon.default_color = "violet";
+											highlightPoly( geoXmlDoc.placemarks[j].polygon, j, "violet" );	
+											break;
+										}
+									case ( crt_populatie <= 5000 ):
+										{
+											geoXmlDoc.placemarks[j].polygon.default_color = "yellow";
+											highlightPoly( geoXmlDoc.placemarks[j].polygon, j, "yellow" );	
+											break;
+										}
+									case ( crt_populatie <= 10000 ):
+										{
+											geoXmlDoc.placemarks[j].polygon.default_color = "indigo";
+											highlightPoly( geoXmlDoc.placemarks[j].polygon, j, "indigo" );	
+											break
+										}
+									case ( crt_populatie <= 20000 ):
+										{
+											geoXmlDoc.placemarks[j].polygon.default_color = "salmon";
+											highlightPoly( geoXmlDoc.placemarks[j].polygon, j, "salmon" );	
+											break
+										}
+									default:
+									{
+										geoXmlDoc.placemarks[j].polygon.default_color = "seagreen";
+										highlightPoly( geoXmlDoc.placemarks[j].polygon, j, "seagreen" );	
+										break
+									}
 								}
-								else
-								{
-									geoXmlDoc.placemarks[j].polygon.default_color = "orangered";
-									highlightPoly( geoXmlDoc.placemarks[j].polygon, j, "orangered" );	
-									break;
-								}
+								break;
 							}
 							else
 							{
-								geoXmlDoc.placemarks[j].polygon.default_color = "gray";
-								highlightPoly( geoXmlDoc.placemarks[j].polygon, j, "gray" );
+								geoXmlDoc.placemarks[j].polygon.default_color = "palegreen";
+								highlightPoly( geoXmlDoc.placemarks[j].polygon, j, "palegreen" );
 								break;
 							}
 							
@@ -270,32 +313,170 @@
 			}
 		}
 	}
+	function adauga_observatii(nume_primarie)
+	{
+		//add observatii_primarie
+		var  det_p = "";
+		var temp_p = nume_primarie.toUpperCase();
+		if(detalii_primarii[temp_p].type)
+			det_p = "<div><span>" + detalii_primarii[temp_p].type + ":</span> " + nume_primarie + "</div><br/>";
+		else
+			det_p = "<div><span>Comuna:</span> " + nume_primarie + "</div><br/>";
+		if(detalii_primarii[temp_p].primar)
+			det_p += "<div><span>Primar:</span> " + detalii_primarii[temp_p].primar + "</div><br/>";
+		if(detalii_primarii[temp_p].partid)
+			det_p += "<div><span>Partid:</span> " + detalii_primarii[temp_p].partid + "</div><br/>";
+		if(detalii_primarii[temp_p].raspuns)
+		{
+			var crt_rasp = detalii_primarii[temp_p].raspuns;
+			if(typeof crt_rasp == "string")
+			{
+				det_p+= "<div><span>Datele Oferite: </span>";
+				det_p+= "<a href=\"" + crt_rasp + "\" target=\"_blank\"> 1 </a></div><br/>";
+			}
+			else
+			{
+				det_p+= "<div><span>Datele Oferite: </span>";
+				for(var idx = 0; idx< crt_rasp.length; idx++)
+				{
+					det_p+= "<a href=\"" + crt_rasp[idx] + "\" target=\"_blank\">"+ (idx+1)+"</a> ";
+				}
+				det_p += "</div><br/>";
+			}
+		}
+		if(detalii_primarii[temp_p].populatie)
+		{
+			det_p += "<div><span>Populatie:</span> " + detalii_primarii[temp_p].populatie + " locuitori</div><br/>";
+		}
+		
+		if(detalii_primarii[temp_p].Site)
+		{
+			det_p += "<div><span>site:</span> " + detalii_primarii[temp_p].site + "</div><br/>";
+		}
+		else
+			det_p += "<div><span>Site:</span> <a href='https://www.prefecturaiasi.ro/Prefectura%20Iasi/Tabel%20Primari.pdf'> detaliile primariei</a></div><br/>";
+			
+		var observatii_primarie = "";
+		if(detalii_primarii[temp_p].c_p == null || detalii_primarii[temp_p].c_vp == null ||detalii_primarii[temp_p].c_s == null  )
+		{
+			observatii_primarie = observatii_primarii.date_incomplete + '</br>';	
+		}
+		console.info(temp_p);
+		if(observatii_primarii[temp_p] )
+			observatii_primarie += observatii_primarii[temp_p]+ '</br>';
+		if(observatii_primarie)
+			det_p += "<div><span>Observatii:</span>" + observatii_primarie + "</div><br/>";
+		document.getElementById('observatii_primarie').innerHTML = det_p;
+		
+	}
+	function detalii_primarie_old(nume_primarie)
+	{	
+		document.getElementById('detalii_primarie').style.visibility = 'visible';
+		var nume_p = nume_primarie.toUpperCase();
+		var crt_year = salarii_2018? '2018': '2017';
+		opt_array = [
+			  ['','Primar', 'Vice Primar', 'Secretar', 'Salariu minim/ec'],
+			  [crt_year, detalii_primarii[nume_p].s_p, detalii_primarii[nume_p].s_vp, detalii_primarii[nume_p].s_s, salariul_min],
+			]
+		if(salarii_2018)
+			opt_array[1] =  [crt_year, detalii_primarii[nume_p].c_p* salariul_min, detalii_primarii[nume_p].c_vp*salariul_min, detalii_primarii[nume_p].c_s*salariul_min, salariul_min];
+		
+		var data = google.visualization.arrayToDataTable(opt_array);
+		
+		var options = {
+		  chart: {
+			title: detalii_primarii[nume_primarie.toUpperCase()].type + " " + nume_primarie,
+			subtitle: 'Salariul(lei) brut/luna pe anul '+ crt_year
+		  },
+		  bars:'vertical',
+		  vAxis:{format: 'decimal' },
+		  legend: "bottom"
+		};
+
+		var chart = new google.charts.Bar(document.getElementById('chart_details'));
+		chart.draw(data, google.charts.Bar.convertOptions(options));
+		
+		adauga_observatii(nume_primarie);
+	}
+	
 	
 	function detalii_primarie(nume_primarie)
-	{	
-		console.info("Intra aiciii", nume_primarie);
-		nume_p = nume_primarie.toUpperCase();
-		//if(detalii_primarii[nume_p].s_p && detalii_primarii[nume_p].s_vp && detalii_primarii[nume_p].s_s )
-		//{
-			var data = google.visualization.arrayToDataTable([
-			  ['','Primar', 'Vice Primar', 'Secretar', 'Salariu minim/ec'],
-			  ['2017', detalii_primarii[nume_p].s_p, detalii_primarii[nume_p].s_vp, detalii_primarii[nume_p].s_s, 1900],
-			]);
+	{
+		document.getElementById('detalii_primarie').style.visibility = 'visible';
+		window.history.pushState( {} , '', '?primaria=' + nume_primarie );
+		var nume_p = nume_primarie.toUpperCase();
+		var crt_year = salarii_2018? '2018': '2017';
+		opt_array = [
+			  [" ", "Salariul brut(lei)" ],
+			  ['Primar',detalii_primarii[nume_p].s_p ? detalii_primarii[nume_p].s_p:0 ],
+			  ['Vice Primar',detalii_primarii[nume_p].s_vp ? detalii_primarii[nume_p].s_vp :0 ],
+			  ['Secretar', detalii_primarii[nume_p].s_s? detalii_primarii[nume_p].s_s : 0 ],
+			  ['Salariu minim/ec',salariul_min]
+			];
+		if(salarii_2018)
+		{
+			opt_array[1][1] = detalii_primarii[nume_p].c_p ? detalii_primarii[nume_p].c_p	* salariul_min : 0;
+			opt_array[2][1] = detalii_primarii[nume_p].c_vp ? detalii_primarii[nume_p].c_vp	* salariul_min : 0;
+			opt_array[3][1] = detalii_primarii[nume_p].c_s ?  detalii_primarii[nume_p].c_s	* salariul_min : 0;
+			
+		}	
+		var data = google.visualization.arrayToDataTable(opt_array);
 
-			var options = {
-			  chart: {
-				title: detalii_primarii[nume_primarie.toUpperCase()].type + " " + nume_primarie,
-				subtitle: 'Salariu brut/luna pe anul 2017',
-			  },
-			  bars:'vertical',
-			  vAxis:{format: 'decimal' },
-			  legend: "bottom"
-			};
+      var view = new google.visualization.DataView(data);
+	   function getValueAt(column, dataTable, row) {
+	  // console.info(dataTable.getFormattedValue(row, column),typeof dataTable.getFormattedValue(row, column) != 'undefined');
+		if( dataTable.getFormattedValue(row, column) != 0 && typeof dataTable.getFormattedValue(row, column) != 'undefined' )
+			return dataTable.getFormattedValue(row, column) + " lei";
+		else
+			return "N/A";
+      }
+	//console.info(opt_array);
+      view.setColumns([0, 1,
+                       { calc: getValueAt.bind(undefined, 1),
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" }
+                       ]);
 
-			var chart = new google.charts.Bar(document.getElementById('chart_details'));
-
-			chart.draw(data, google.charts.Bar.convertOptions(options));
-		//}
+      var options = {
+		title: detalii_primarii[nume_primarie.toUpperCase()].type + " " + nume_primarie,
+		subtitle: 'Salariul(lei) brut/luna pe anul '+ crt_year,
+		width: window.screen.width > 400? window.screen.width*0.45: window.screen.width*0.9,
+		height:400,
+        bar: {groupWidth: "95%"},
+        legend: { position: "none" },
+      };
+	  
+      var chart = new google.visualization.ColumnChart(document.getElementById("chart_details"));
+      chart.draw(view,options);
+	  
+	  adauga_observatii(nume_primarie);
+	}
+	function calculare_salarii()
+	{
+		salarii_2018 = !salarii_2018;
+		if(infoview)  infoview.close();
+		if(salarii_2018)
+		{
+			document.getElementById('b_venituri').firstChild.data = "Veniturile inainte de 1 Ianuarie 2018";
+			salariul_min = 1900;
+		}
+		else
+		{
+			document.getElementById('b_venituri').firstChild.data = "Veniturile de la 1 Ianuarie 2018";
+			salariul_min = 1450;
+		}
+		reset_page();
+	}
+	function reset_page()
+	{
+		for(var i=0;i<geoXmlDoc.placemarks.length; i++)
+		{
+			setTooltipDetails(geoXmlDoc.placemarks[i].polygon);
+			highlightPoly(geoXmlDoc.placemarks[i].polygon, i);
+		}
+		document.getElementById('detalii_primarie').style.visibility = 'hidden';
+		window.history.pushState( {} , '', '/' );
 	}
     </script>
     <script async defer

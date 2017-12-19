@@ -4,13 +4,14 @@ detalii_primarii = {
 		"partid": "PSD",
 		"type": "Comuna",
 		"primar": "Baciu Vasile Cornelus",
-		"raspuns": null,
+		"raspuns": "./raspunsuri_primarii/Al.I.Cuza.pdf",
 		"s_p": 5800,
 		"s_vp": 4350,
 		"s_s": null,
 		"c_p": 4,
 		"c_vp": 3,
-		"c_s": null
+		"c_s": null,
+		"populatie": 2917
 	},
 	"ANDRIESENI": {
 		"partid": "PNL",
@@ -18,14 +19,16 @@ detalii_primarii = {
 		"primar": "Maricel Turcu",
 		"raspuns": null,
 		"c_p": 4.5,
-		"c_vp": 3.5
+		"c_vp": 3.5,
+		"populatie": 4422
 	},
 	"ARONEANU": {
 		"partid": "PNL",
 		"type": "Comuna",
 		"primar": "Moruzi Benoni",
 		"raspuns": null,
-		"c_p": 4.5
+		"c_p": 4.5,
+		"populatie": 3747
 	},
 	"BALS": {
 		"partid": "PSD",
@@ -37,7 +40,8 @@ detalii_primarii = {
 		"s_s": 5060,
 		"c_p": 4.5,
 		"c_vp": 3.5,
-		"c_s": 3.49
+		"c_s": 3.49,
+		"populatie": 3640
 	},
 	"BALTATI": {
 		"partid": "PSD",
@@ -49,6 +53,7 @@ detalii_primarii = {
 		"c_vp": 4,
 		"s_s": 5786,
 		"c_s": null,
+		"populatie": 5626,
 		"s_vp": 5800
 	},
 	"BARNOVA": {
@@ -61,25 +66,29 @@ detalii_primarii = {
 		"s_vp": 5800,
 		"c_vp": 4,
 		"s_s": 5800,
-		"c_s": 4
+		"c_s": 4,
+		"populatie": 11545
 	},
 	"BELCESTI": {
 		"partid": "PNL",
 		"type": "Comuna",
 		"raspuns": null,
-		"primar": "Ciobanita Constantin"
+		"primar": "Ciobanita Constantin",
+		"populatie": 6160
 	},
 	"BIVOLARI": {
 		"partid": "PSD",
 		"type": "Comuna",
 		"raspuns": null,
-		"primar": "Teodorescu Dumitru-liviu"
+		"primar": "Teodorescu Dumitru-liviu",
+		"populatie": 4338
 	},
 	"BRAESTI": {
 		"partid": "PNL",
 		"type": "Comuna",
-		"raspuns": null,
-		"primar": "Butnaru Vasile"
+		"raspuns": "./raspunsuri_primarii/Braesti.PDF",
+		"primar": "Butnaru Vasile",
+		"populatie": 3197
 	},
 	"BUTEA": {
 		"partid": "PSD",
@@ -91,25 +100,28 @@ detalii_primarii = {
 		"c_vp": 3.5,
 		"s_vp": 5075,
 		"c_s": 3,
-		"s_s": 4350
+		"s_s": 4350,
+		"populatie": 4336
 	},
 	"CEPLENITA": {
 		"partid": "PNL",
 		"type": "Comuna",
 		"raspuns": null,
-		"primar": "Laiu Dumitru"
+		"primar": "Laiu Dumitru",
+		"populatie": 4418
 	},
 	"CIOHORANI": {
 		"partid": "PSD",
 		"type": "Comuna",
-		"raspuns": null,
+		"raspuns": "./raspunsuri_primarii/Ciohorani.pdf",
 		"primar": "Simion Ticu",
 		"c_p": 5,
 		"s_p": 7250,
 		"c_vp": 3.75,
 		"s_vp": 5438,
 		"s_s": 4350,
-		"c_s": 3
+		"c_s": 3,
+		"populatie": 2015
 	},
 	"CIORTESTI": {
 		"partid": "PNL",
@@ -121,7 +133,8 @@ detalii_primarii = {
 		"c_vp": 3.5,
 		"s_vp": 5075,
 		"c_s": 3.45,
-		"s_s": 5003
+		"s_s": 5003,
+		"populatie": 4324
 	},
 	"CIUREA": {
 		"partid": "PSD",
@@ -133,8 +146,9 @@ detalii_primarii = {
 		"c_p": 5.5,
 		"s_vp": 6525,
 		"c_vp": 4.5,
-		"s_s": 7090,
-		"c_s": 3.85
+		"s_s": 5583,
+		"c_s": 3.85,
+		"populatie": 14177
 	},
 	"COARNELE CAPREI": {
 		"partid": "PSD",
@@ -146,7 +160,8 @@ detalii_primarii = {
 		"c_vp": 3.5,
 		"s_vp": 5075,
 		"c_s": 3.2,
-		"s_s": 4640
+		"s_s": 4640,
+		"populatie": 3057
 	},
 	"COMARNA": {
 		"partid": "PNL",
@@ -158,7 +173,8 @@ detalii_primarii = {
 		"c_vp": 4,
 		"s_vp": 5800,
 		"s_s": 4640,
-		"c_s": 3.2
+		"c_s": 3.2,
+		"populatie": 5405
 	},
 	"COSTESTI": {
 		"partid": "PSD",
@@ -170,13 +186,15 @@ detalii_primarii = {
 		"s_vp": 4828.5,
 		"c_vp": 3.33,
 		"s_s": null,
-		"c_s": null
+		"c_s": null,
+		"populatie": 1849
 	},
 	"COSTULENI": {
 		"partid": "UNPR",
 		"type": "Comuna",
 		"raspuns": null,
 		"primar": "Dodan Mirica",
+		"populatie": 5065,
 		"s_p": 0,
 		"s_vp": 0,
 		"s_s": 0
@@ -191,49 +209,70 @@ detalii_primarii = {
 		"s_vp": 5800,
 		"c_vp": 4,
 		"s_s": 5655,
-		"c_s": 3.9
+		"c_s": 3.9,
+		"populatie": 7999
 	},
 	"COZMESTI": {
 		"partid": "PSD",
 		"type": "Comuna",
-		"raspuns": null,
+		"raspuns": ["./raspunsuri_primarii/Cozmesti 1.jpeg","./raspunsuri_primarii/Cozmesti 2.jpeg","./raspunsuri_primarii/Cozmesti 3.jpeg","./raspunsuri_primarii/Cozmesti 4.jpeg","./raspunsuri_primarii/Cozmesti 5.jpeg","./raspunsuri_primarii/Cozmesti 6.jpeg"],
 		"primar": "Baltag Petrica",
 		"s_p": 6525,
 		"c_p": 4.5,
 		"s_vp": 5075,
 		"c_vp": 3.5,
 		"s_s": 5075,
-		"c_s": 3.5
+		"c_s": 3.5,
+		"populatie": 2894
 	},
 	"CRISTESTI": {
 		"partid": "PSD",
 		"type": "Comuna",
 		"raspuns": null,
-		"primar": "Bolohan Constantin"
+		"primar": "Bolohan Constantin",
+		"populatie": 4105,
+		"s_s": 0
 	},
 	"CUCUTENI": {
 		"partid": "PSD",
 		"type": "Comuna",
-		"raspuns": null,
-		"primar": "Brînza Pamfilica"
+		"raspuns": "./raspunsuri_primarii/Cucuteni.doc",
+		"primar": "Brînza Pamfilica",
+		"populatie": 1315,
+		"c_p": 4,
+		"c_vp": 3,
+		"s_vp": 4350,
+		"c_s": 2.97,
+		"s_s": 4306.5
 	},
 	"DAGATA": {
 		"partid": "PNL",
 		"type": "Comuna",
-		"raspuns": null,
-		"primar": "Damaschin Mirel"
+		"raspuns": "./raspunsuri_primarii/Dagata.pdf",
+		"populatie": 4955,
+		"primar": "Damaschin Mirel",
+		"s_vp": 0,
+		"s_s": 0
 	},
 	"DELENI": {
 		"partid": "PNL",
 		"type": "Comuna",
-		"raspuns": null,
-		"primar": "Prigoreanu Dumitru"
+		"raspuns": "./raspunsuri_primarii/Delenei.jpg",
+		"populatie": 10528,
+		"c_p": 6.875,
+		"s_p": 9969,
+		"primar": "Prigoreanu Dumitru",
+		"c_vp": 4.5,
+		"s_vp": 6525,
+		"c_s": 4.25,
+		"s_s": 6162.5
 	},
 	"DOBROVAT": {
 		"partid": "PSD",
 		"partial": true,
 		"type": "Comuna",
 		"raspuns": ["./raspunsuri_primarii/Dobrovat 1.png", "./raspunsuri_primarii/Dobrovat 2.png", "./raspunsuri_primarii/Dobrovat.pdf"],
+		"populatie": 2426,
 		"s_p": 0,
 		"primar": "Martinus Catalin-iulian",
 		"s_vp": 0,
@@ -243,25 +282,34 @@ detalii_primarii = {
 	"DOLHESTI": {
 		"partid": "PNL",
 		"type": "Comuna",
-		"raspuns": null,
-		"s_p": 0,
+		"raspuns": "./raspunsuri_primarii/Dolhesti.pdf",
+		"populatie": 2854,
+		"c_p": 4,
+		"s_p": 5800,
 		"primar": "Iacob Gelu",
-		"s_vp": 0,
-		"s_s": 0
+		"c_vp": 3,
+		"s_vp": 4350,
+		"c_s": 2.98,
+		"s_s": 4321
 	},
 	"DRAGUSENI": {
 		"partid": "PSD",
 		"type": "Comuna",
-		"raspuns": null,
-		"s_p": 0,
+		"raspuns": "./raspunsuri_primarii/Draguseni.pdf",
+		"populatie": 1522,
+		"c_p": 4,
+		"s_p": 5800,
 		"primar": "Ciobotaru Viorel",
-		"s_vp": 0,
-		"s_s": 0
+		"c_vp": 3,
+		"s_vp": 4350,
+		"c_s": 2.9,
+		"s_s": 4205
 	},
 	"DUMESTI": {
 		"partid": "PSD",
 		"type": "Comuna",
 		"raspuns": null,
+		"populatie": 5087,
 		"s_p": 0,
 		"primar": "Sabaiduc Mihai",
 		"s_vp": 0,
@@ -271,6 +319,7 @@ detalii_primarii = {
 		"partid": "PSD",
 		"type": "Comuna",
 		"raspuns": null,
+		"populatie": 5757,
 		"s_p": 0,
 		"primar": "Lungu Ionel",
 		"s_vp": 0,
@@ -280,6 +329,7 @@ detalii_primarii = {
 		"partid": "PSD",
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/Fantanele.pdf",
+		"populatie": 2120,
 		"c_p": 4,
 		"s_p": 5800,
 		"primar": "Chelariu Sorin",
@@ -291,7 +341,8 @@ detalii_primarii = {
 	"FOCURI": {
 		"partid": "PSD",
 		"type": "Comuna",
-		"raspuns": null,
+		"raspuns": "./raspunsuri_primarii/Focuri.JPG",
+		"populatie": 4092,
 		"s_p": 0,
 		"primar": "Macovei Vasile",
 		"c_vp": 0,
@@ -303,6 +354,7 @@ detalii_primarii = {
 		"partid": "PSD",
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/Golaesti.pdf",
+		"populatie": 4001,
 		"c_p": 4.5,
 		"s_p": 6525,
 		"primar": "Bîzdîga Mihai",
@@ -315,16 +367,20 @@ detalii_primarii = {
 		"partid": "PSD",
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/Gorban.pdf",
+		"populatie": 3063,
 		"c_p": 5.625,
 		"s_p": 8156,
 		"primar": "Rotaru Danut",
 		"c_vp": 3.5,
-		"s_vp": 5075
+		"s_vp": 5075,
+		"c_s": null,
+		"s_s": null
 	},
 	"GRAJDURI": {
 		"partid": "PSD",
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/Grajduri.pdf",
+		"populatie": 7958,
 		"c_p": 5,
 		"s_p": 7250,
 		"primar": "Zamfirache Constantin",
@@ -337,6 +393,7 @@ detalii_primarii = {
 		"partid": "PSD",
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/Gropnita.PDF",
+		"populatie": 3366,
 		"c_p": 4.5,
 		"s_p": 6525,
 		"primar": "Oneaga Ionel",
@@ -348,7 +405,8 @@ detalii_primarii = {
 	"GROZESTI": {
 		"partid": "PMP",
 		"type": "Comuna",
-		"raspuns": null,
+		"raspuns": "./raspunsuri_primarii/Grozesti.tif",
+		"populatie": 1765,
 		"c_p": 5,
 		"s_p": 7250,
 		"primar": "Cristea George",
@@ -361,6 +419,7 @@ detalii_primarii = {
 		"partid": "PNL",
 		"type": "Comuna",
 		"raspuns": null,
+		"populatie": 5867,
 		"s_p": 0,
 		"primar": "Anton Iosif",
 		"s_vp": 0,
@@ -370,6 +429,7 @@ detalii_primarii = {
 		"partid": "PNL",
 		"type": "Comuna",
 		"raspuns": ["./raspunsuri_primarii/Harmanesti 1.pdf", "./raspunsuri_primarii/Harmanesti 2.pdf"],
+		"populatie": 2476,
 		"c_p": 5,
 		"s_p": 7250,
 		"primar": "Secrieru Ioan",
@@ -382,6 +442,7 @@ detalii_primarii = {
 		"partid": "PSD",
 		"type": "Orasul",
 		"raspuns": "./raspunsuri_primarii/Harlau.pdf",
+		"populatie": 12456,
 		"c_p": 6,
 		"s_p": 8700,
 		"primar": "Curca Gheorghita",
@@ -394,6 +455,7 @@ detalii_primarii = {
 		"partid": "PSD",
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/Helesteni.pdf",
+		"populatie": 2772,
 		"c_p": 4,
 		"s_p": 5800,
 		"primar": "Hîra Constantin",
@@ -406,6 +468,7 @@ detalii_primarii = {
 		"partid": "PSD",
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/Holboca.pdf",
+		"populatie": 14774,
 		"c_p": 5.5,
 		"s_p": 7975,
 		"primar": "Stefurac Gheorghe",
@@ -418,26 +481,33 @@ detalii_primarii = {
 		"partid": "PSD",
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/Horlesti.pdf",
+		"populatie": 3141,
 		"c_p": 4.5,
 		"s_p": 6525,
 		"primar": "Cadar Mihai",
 		"c_vp": 3.5,
-		"s_vp": 5075
+		"s_vp": 5075,
+		"c_s": null,
+		"s_s": null
 	},
 	"IASI": {
 		"partid": "PSD",
-		"type": "Orasul",
+		"type": "Municipiul",
 		"raspuns": "./raspunsuri_primarii/Iasi.pdf",
+		"populatie": 359843,
 		"c_p": 9,
 		"s_p": 13050,
 		"primar": "Mihai Chirica",
 		"c_vp": 8,
-		"s_vp": 11600
+		"s_vp": 11600,
+		"c_s": null,
+		"s_s": null
 	},
 	"ION NECULCE": {
 		"partid": "PSD",
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/Ion Neculce.pdf",
+		"populatie": 5834,
 		"c_p": 6.25,
 		"s_p": 9063,
 		"primar": "Valeanu Gheorghe",
@@ -451,6 +521,7 @@ detalii_primarii = {
 		"type": "Comuna",
 		"partial": true,
 		"raspuns": "./raspunsuri_primarii/Ipatele.pdf",
+		"populatie": 1842,
 		"s_p": 0,
 		"primar": "Postarnac Costica",
 		"s_vp": 0,
@@ -460,7 +531,8 @@ detalii_primarii = {
 	"LESPEZI": {
 		"partid": "PNL",
 		"type": "Comuna",
-		"raspuns": null,
+		"raspuns": "./raspunsuri_primarii/Lespezi.doc",
+		"populatie": 6032,
 		"s_p": 0,
 		"primar": "Lazar Ioan",
 		"s_vp": 0,
@@ -470,6 +542,7 @@ detalii_primarii = {
 		"partid": "PNL",
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/Letcani.pdf",
+		"populatie": 7633,
 		"c_p": 5,
 		"s_p": 7250,
 		"primar": "Turcu Stelian",
@@ -481,7 +554,8 @@ detalii_primarii = {
 	"LUNGANI": {
 		"partid": "PSD",
 		"type": "Comuna",
-		"raspuns": null,
+		"raspuns": "./raspunsuri_primarii/Lungani.docx",
+		"populatie": 6295,
 		"c_p": 5,
 		"s_p": 7250,
 		"primar": "Pricopie Gheorghe",
@@ -493,16 +567,13 @@ detalii_primarii = {
 	"MADIRJAC": {
 		"partid": "UNPR",
 		"type": "Comuna",
-		"raspuns": null,
-		"s_p": 0,
-		"primar": "Ghebuta Dan",
-		"s_vp": 0,
-		"s_s": 0
+		"raspuns": null
 	},
 	"MIRCESTI": {
 		"partid": "PNL",
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/Mircesti.PDF",
+		"populatie": 3950,
 		"c_p": 4.5,
 		"s_p": 6525,
 		"primar": "Antalut Petre",
@@ -514,7 +585,8 @@ detalii_primarii = {
 	"MIRONEASA": {
 		"partid": "PNL",
 		"type": "Comuna",
-		"raspuns": null,
+		"raspuns": "./raspunsuri_primarii/Mironeasa.pdf",
+		"populatie": 5625,
 		"s_p": 0,
 		"primar": "Curcudel Elena",
 		"s_vp": 0,
@@ -523,7 +595,8 @@ detalii_primarii = {
 	"MIROSLAVA": {
 		"partid": "PNL",
 		"type": "Comuna",
-		"raspuns": null,
+		"raspuns": "./raspunsuri_primarii/Miroslava.pdf",
+		"populatie": 15055,
 		"s_p": 0,
 		"primar": "Nita Dan",
 		"s_vp": 0,
@@ -533,6 +606,7 @@ detalii_primarii = {
 		"partid": "UNPR",
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/Miroslovesti.pdf",
+		"populatie": 4532,
 		"c_p": 4.5,
 		"s_p": 6525,
 		"primar": "Cojocaru Constantin",
@@ -545,6 +619,7 @@ detalii_primarii = {
 		"partid": "PSD",
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/Mogosesti.pdf",
+		"populatie": 5333,
 		"c_p": 5,
 		"s_p": 7250,
 		"primar": "Maftei Stefan",
@@ -556,16 +631,21 @@ detalii_primarii = {
 	"MOGOSESTI-SIRET": {
 		"partid": "PNL",
 		"type": "Comuna",
-		"raspuns": null,
-		"s_p": 0,
+		"raspuns": "./raspunsuri_primarii/Mogosesti-siret.pdf",
+		"populatie": 3863,
+		"c_p": 4.5,
+		"s_p": 6525,
 		"primar": "Butnariu Damian",
-		"s_vp": 0,
-		"s_s": 0
+		"c_vp": 3.5,
+		"s_vp": 5075,
+		"c_s": 3.49,
+		"s_s": 5060.5
 	},
 	"MOSNA": {
 		"partid": "PSD",
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/Mosna.pdf",
+		"populatie": 6210,
 		"c_p": 6.25,
 		"s_p": 9063,
 		"primar": "Popa Georgel",
@@ -578,6 +658,7 @@ detalii_primarii = {
 		"partid": "PSD",
 		"type": "Comuna",
 		"raspuns": null,
+		"populatie": 5496,
 		"s_p": 0,
 		"primar": "Hobinca Constantin-serioja",
 		"s_vp": 0,
@@ -587,16 +668,20 @@ detalii_primarii = {
 		"partid": "PSD",
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/Movileni.pdf",
+		"populatie": 3180,
 		"c_p": 4.5,
 		"s_p": 6525,
 		"primar": "Plumbu Mihai",
 		"c_vp": 3.5,
-		"s_vp": 5075
+		"s_vp": 5075,
+		"c_s": null,
+		"s_s": null
 	},
 	"OTELENI": {
 		"partid": "PNL",
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/Oteleni.jpg",
+		"populatie": 3777,
 		"c_p": 4.5,
 		"s_p": 6525,
 		"primar": "Aiojoaei Ciprian",
@@ -607,8 +692,9 @@ detalii_primarii = {
 	},
 	"PASCANI": {
 		"partid": "PSD",
-		"type": "Comuna",
+		"type": "Municipiul",
 		"raspuns": "./raspunsuri_primarii/Pascani.pdf",
+		"populatie": 43555,
 		"c_p": 6.5,
 		"s_p": 9425,
 		"primar": "Dumitru Pantazi",
@@ -620,6 +706,7 @@ detalii_primarii = {
 		"partid": "PNL",
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/Plugari.PDF",
+		"populatie": 3555,
 		"c_p": 5.625,
 		"s_p": 8156,
 		"primar": "Mursa Paul",
@@ -631,6 +718,7 @@ detalii_primarii = {
 		"partid": "PSD",
 		"type": "Orasul",
 		"raspuns": null,
+		"populatie": 11003,
 		"s_p": 0,
 		"primar": "Gabi Constantin Istrate",
 		"c_vp": 0,
@@ -641,6 +729,7 @@ detalii_primarii = {
 		"partid": "PNL",
 		"type": "Comuna",
 		"raspuns": null,
+		"populatie": 5084,
 		"s_p": 0,
 		"primar": "Lupu Vasile",
 		"s_vp": 0,
@@ -650,6 +739,7 @@ detalii_primarii = {
 		"partid": "PSD",
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/Popricani.pdf",
+		"populatie": 8238,
 		"c_p": 5,
 		"s_p": 7250,
 		"primar": "Parlog Valeriu",
@@ -662,6 +752,7 @@ detalii_primarii = {
 		"partid": "PSD",
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/Prisacani.pdf",
+		"populatie": 3489,
 		"c_p": 4.5,
 		"s_p": 6525,
 		"primar": "Stanciu Ghiorghe",
@@ -674,18 +765,20 @@ detalii_primarii = {
 		"partid": "PNL",
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/Probota.pdf",
+		"populatie": 3775,
 		"c_p": 4.5,
 		"s_p": 6525,
 		"primar": "Zamisnicu Constantin",
 		"c_vp": 3.5,
 		"s_vp": 5075,
 		"c_s": 3.3,
-		"s_s": 4906
+		"s_s": 4785
 	},
 	"RACHITENI": {
 		"partid": "PNL",
 		"type": "Comuna",
 		"raspuns": null,
+		"populatie": 3443,
 		"s_p": 0,
 		"primar": "Dobos Petre",
 		"s_vp": 0,
@@ -694,16 +787,21 @@ detalii_primarii = {
 	"RADUCANENI": {
 		"partid": "PSD",
 		"type": "Comuna",
-		"raspuns": null,
-		"s_p": 0,
+		"raspuns": "./raspunsuri_primarii/Raducaneni.pdf",
+		"populatie": 9282,
+		"c_p": 5,
+		"s_p": 7250,
 		"primar": "Ilie Viorel",
-		"s_vp": 0,
-		"s_s": 0
+		"c_vp": 4,
+		"s_vp": 5800,
+		"c_s": 3.72,
+		"s_s": 5394
 	},
 	"REDIU": {
 		"partid": "PNL",
 		"type": "Comuna",
-		"raspuns": null,
+		"raspuns": "./raspunsuri_primarii/Rediu.pdf",
+		"populatie": 5959,
 		"s_p": 0,
 		"primar": "Haidau Vasile",
 		"s_vp": 0,
@@ -713,6 +811,7 @@ detalii_primarii = {
 		"partid": "PNL",
 		"type": "Comuna",
 		"raspuns": null,
+		"populatie": 1866,
 		"c_p": 0,
 		"s_p": 0,
 		"primar": "Stegariu Ioan",
@@ -723,6 +822,7 @@ detalii_primarii = {
 		"partid": "PSD",
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/Roscani.doc",
+		"populatie": 1557,
 		"c_p": 4,
 		"s_p": 5800,
 		"primar": "Gheorghiu Ginovel",
@@ -735,6 +835,7 @@ detalii_primarii = {
 		"partid": "PSD",
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/Ruginoasa.pdf",
+		"populatie": 6451,
 		"c_p": 6.25,
 		"s_p": 9063,
 		"primar": "Nechifor Danut",
@@ -747,6 +848,7 @@ detalii_primarii = {
 		"partid": "PSD",
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/scinteia.pdf",
+		"populatie": 5268,
 		"c_p": 5,
 		"s_p": 7250,
 		"primar": "Sacaleanu Fanica",
@@ -759,6 +861,7 @@ detalii_primarii = {
 		"partid": "PSD",
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/Scheia.pdf",
+		"populatie": 3402,
 		"c_p": 4.5,
 		"s_p": 6525,
 		"primar": "Ababei Danut",
@@ -771,6 +874,7 @@ detalii_primarii = {
 		"partid": "PSD",
 		"type": "Comuna",
 		"raspuns": null,
+		"populatie": 4156,
 		"s_p": 0,
 		"primar": "Mihalache Mihai",
 		"s_vp": 0,
@@ -779,7 +883,8 @@ detalii_primarii = {
 	"SCOBINTI": {
 		"partid": "PSD",
 		"type": "Comuna",
-		"raspuns": null,
+		"raspuns": "./raspunsuri_primarii/Scobinti.pdf",
+		"populatie": 7681,
 		"s_p": 0,
 		"primar": "Hritcu Gheorghe",
 		"s_vp": 0,
@@ -789,6 +894,7 @@ detalii_primarii = {
 		"partid": "PNL",
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/Sinesti.pdf",
+		"populatie": 4622,
 		"c_p": 4.5,
 		"s_p": 6525,
 		"primar": "Holicov Petru",
@@ -801,6 +907,7 @@ detalii_primarii = {
 		"partid": "PSD",
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/sipote.pdf",
+		"populatie": 5346,
 		"c_p": 5,
 		"s_p": 7250,
 		"primar": "Malii Dorin- Mircea",
@@ -812,6 +919,7 @@ detalii_primarii = {
 		"partid": "PNL",
 		"type": "Comuna",
 		"raspuns": null,
+		"populatie": 4380,
 		"s_p": 0,
 		"primar": "Ancuta Gheorghe",
 		"s_vp": 0,
@@ -820,19 +928,13 @@ detalii_primarii = {
 	"STOLNICENI-PRAJESCU": {
 		"partid": "PSD",
 		"type": "Comuna",
-		"raspuns": "./raspunsuri_primarii/Stolniceni.pdf",
-		"c_p": 5,
-		"s_p": 7250,
-		"primar": "Hugianu Costel",
-		"c_vp": 4,
-		"s_vp": 5800,
-		"c_s": 3.98,
-		"s_s": 5771
+		"raspuns": "./raspunsuri_primarii/Stolniceni.pdf"
 	},
 	"STRUNGA": {
 		"partid": "PSD",
 		"type": "Comuna",
 		"raspuns": null,
+		"populatie": 4480,
 		"s_p": 0,
 		"primar": "Lazar Mariana",
 		"s_vp": 0,
@@ -843,6 +945,7 @@ detalii_primarii = {
 		"partial": true,
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/Tansa.pdf",
+		"populatie": 2600,
 		"s_p": 0,
 		"primar": "Voinescu Daniel",
 		"s_vp": 0,
@@ -852,6 +955,7 @@ detalii_primarii = {
 		"partid": "PSD",
 		"type": "Orasul",
 		"raspuns": "./raspunsuri_primarii/Tirgu Frumos.pdf",
+		"populatie": 14562,
 		"c_p": 6,
 		"s_p": 8700,
 		"primar": "Ionel Vatamanu",
@@ -863,7 +967,8 @@ detalii_primarii = {
 	"TATARUSI": {
 		"partid": "PSD",
 		"type": "Comuna",
-		"raspuns": null,
+		"raspuns": "./raspunsuri_primarii/Tatarusi.pdf",
+		"populatie": 5650,
 		"s_p": 0,
 		"primar": "Iosub Costel",
 		"s_vp": 0,
@@ -872,10 +977,13 @@ detalii_primarii = {
 	"TIBANA": {
 		"partid": "PSD",
 		"type": "Comuna",
-		"raspuns": null,
-		"s_p": 0,
+		"raspuns": "./raspunsuri_primarii/Tibana.pdf",
+		"populatie": 8144,
+		"c_p": 4.64,
+		"s_p": 6728,
 		"primar": "Rotaru Gheorghe",
-		"s_vp": 0,
+		"c_vp": 4.08,
+		"s_vp": 5916,
 		"s_s": 0
 	},
 	"TIBANESTI": {
@@ -883,6 +991,7 @@ detalii_primarii = {
 		"partial": true,
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/Tibanesti 1.pdf",
+		"populatie": 8275,
 		"s_p": 0,
 		"primar": "Cobuz Aurica",
 		"s_vp": 0,
@@ -894,6 +1003,7 @@ detalii_primarii = {
 		"partial": true,
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/Tiganasi.pdf",
+		"populatie": 4776,
 		"s_p": 0,
 		"primar": "Chirila Iulian",
 		"s_vp": 0,
@@ -903,6 +1013,7 @@ detalii_primarii = {
 		"partid": "PSD",
 		"type": "Comuna",
 		"raspuns": null,
+		"populatie": 5351,
 		"s_p": 0,
 		"primar": "Droanca Ovidiu",
 		"s_vp": 0,
@@ -912,6 +1023,7 @@ detalii_primarii = {
 		"partid": "PSD",
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/Tomesti.pdf",
+		"populatie": 13896,
 		"c_p": 5.5,
 		"s_p": 7975,
 		"primar": "Timofte Stefan",
@@ -924,6 +1036,7 @@ detalii_primarii = {
 		"partid": "PNL",
 		"type": "Comuna",
 		"raspuns": null,
+		"populatie": 4010,
 		"s_p": 0,
 		"primar": "Ivanuca Alexandru",
 		"s_vp": 0,
@@ -933,6 +1046,7 @@ detalii_primarii = {
 		"partid": "UNPR",
 		"type": "Comuna",
 		"raspuns": ["./raspunsuri_primarii/Tutora 1.pdf", "./raspunsuri_primarii/Tutora 2.pdf", "./raspunsuri_primarii/Tutora 3.pdf", "./raspunsuri_primarii/Tutora 4.pdf", "./raspunsuri_primarii/Tutora 5.pdf", "./raspunsuri_primarii/Tutora 6.pdf"],
+		"populatie": 2152,
 		"c_p": 4,
 		"s_p": 5800,
 		"primar": "Albu Cristinel",
@@ -945,6 +1059,7 @@ detalii_primarii = {
 		"partid": "PSD",
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/Ungheni.jpeg",
+		"populatie": 4436,
 		"c_p": 4.5,
 		"s_p": 6525,
 		"primar": "Marcu Iulian",
@@ -957,6 +1072,7 @@ detalii_primarii = {
 		"partid": "PSD",
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/Valea Lupului.pdf",
+		"populatie": 6171,
 		"c_p": 5,
 		"s_p": 7250,
 		"primar": "Mihailuc Dumitru",
@@ -969,6 +1085,7 @@ detalii_primarii = {
 		"partid": "PSD",
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/Valea Seaca.pdf",
+		"populatie": 6180,
 		"c_p": 5,
 		"s_p": 7250,
 		"primar": "Baiceanu Gheorghe",
@@ -981,6 +1098,7 @@ detalii_primarii = {
 		"partid": "PSD",
 		"type": "Comuna",
 		"raspuns": null,
+		"populatie": 4737,
 		"s_p": 0,
 		"primar": "Lupu Constantin",
 		"s_vp": 0,
@@ -990,6 +1108,7 @@ detalii_primarii = {
 		"partid": "PNL",
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/VICTORIA.pdf",
+		"populatie": 4524,
 		"c_p": 5.625,
 		"s_p": 8156,
 		"primar": "Cretu Daniel",
@@ -1002,21 +1121,18 @@ detalii_primarii = {
 		"partid": "PSD",
 		"type": "Comuna",
 		"raspuns": null,
+		"populatie": 4434,
 		"s_p": 0,
-		"primar": "Brînzanu Catalin",
-		"s_vp": 0,
-		"s_s": 0
+		"primar": "Brînzanu Catalin"
 	},
 	"VOINESTI": {
 		"partid": "PSD",
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/Voinesti.pdf",
+		"populatie": 8046,
 		"c_p": 5,
 		"s_p": 7250,
-		"primar": "Dobreanu Gheorghe",
-		"c_vp": 4,
-		"s_vp": 5800,
-		"c_s": 3.96,
-		"s_s": 5742
+		"primar": "Dobreanu Gheorghe"
 	}
 }
+
