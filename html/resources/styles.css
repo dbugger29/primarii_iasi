@@ -191,9 +191,21 @@ padding-left:2px;
 #observatii_primarie div{
 	text-align:left;
 }
+
+#observatii_primarie .warning{
+	color:red;
+	font-size:12px;
+	font-size:large;
+}
+
+/*#observatii_primarie .info{
+	font-size:12px;
+	font-size:large;
+}*/
+
 #observatii_primarie span {
 	font-weight: bold;
-    min-width: 93px;
+    min-width: 200px;
     text-align: right;
     margin-right: 10px;
 }

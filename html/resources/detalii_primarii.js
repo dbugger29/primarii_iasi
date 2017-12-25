@@ -1,5 +1,5 @@
 
-detalii_primarii = {
+detalii_primarii ={
 	"ALEXANDRU IOAN CUZA": {
 		"partid": "PSD",
 		"type": "Comuna",
@@ -10,8 +10,9 @@ detalii_primarii = {
 		"s_s": null,
 		"c_p": 4,
 		"c_vp": 3,
-		"c_s": null,
-		"populatie": 2917
+		"c_s": 0,
+		"populatie": 2917,
+		"site": "http://primaria-aicuza.xhost.ro/prezentare.htm"
 	},
 	"ANDRIESENI": {
 		"partid": "PNL",
@@ -20,7 +21,9 @@ detalii_primarii = {
 		"raspuns": null,
 		"c_p": 4.5,
 		"c_vp": 3.5,
-		"populatie": 4422
+		"populatie": 4422,
+		"site": "http://www.primariaandrieseni.ro/",
+		"c_s": 0
 	},
 	"ARONEANU": {
 		"partid": "PNL",
@@ -28,7 +31,10 @@ detalii_primarii = {
 		"primar": "Moruzi Benoni",
 		"raspuns": null,
 		"c_p": 4.5,
-		"populatie": 3747
+		"populatie": 3747,
+		"site": "http://www.comunaaroneanu.ro/",
+		"c_vp": 0,
+		"c_s": 0
 	},
 	"BALS": {
 		"partid": "PSD",
@@ -41,7 +47,8 @@ detalii_primarii = {
 		"c_p": 4.5,
 		"c_vp": 3.5,
 		"c_s": 3.49,
-		"populatie": 3640
+		"populatie": 3640,
+		"site": "http://primariacomuneibals.ro/index.html"
 	},
 	"BALTATI": {
 		"partid": "PSD",
@@ -52,9 +59,10 @@ detalii_primarii = {
 		"c_p": 6.25,
 		"c_vp": 4,
 		"s_s": 5786,
-		"c_s": null,
+		"c_s": 0,
 		"populatie": 5626,
-		"s_vp": 5800
+		"s_vp": 5800,
+		"site": "http://www.primariabaltati.ro/"
 	},
 	"BARNOVA": {
 		"partid": "PSD",
@@ -67,28 +75,44 @@ detalii_primarii = {
 		"c_vp": 4,
 		"s_s": 5800,
 		"c_s": 4,
-		"populatie": 11545
+		"populatie": 11545,
+		"site": "http://primariabarnova.ro/"
 	},
 	"BELCESTI": {
 		"partid": "PNL",
 		"type": "Comuna",
 		"raspuns": null,
 		"primar": "Ciobanita Constantin",
-		"populatie": 6160
+		"populatie": 6160,
+		"site": "http://primaria.belcesti.ro/",
+		"c_p": 0,
+		"c_vp": 0,
+		"c_s": 0
 	},
 	"BIVOLARI": {
 		"partid": "PSD",
 		"type": "Comuna",
 		"raspuns": null,
 		"primar": "Teodorescu Dumitru-liviu",
-		"populatie": 4338
+		"populatie": 4338,
+		"site": "http://comunabivolari.ro/",
+		"c_p": 0,
+		"c_vp": 0,
+		"c_s": 0
 	},
 	"BRAESTI": {
 		"partid": "PNL",
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/Braesti.PDF",
 		"primar": "Butnaru Vasile",
-		"populatie": 3197
+		"populatie": 3197,
+		"c_p": 4.5,
+		"s_p": 6525,
+		"s_vp": 5075,
+		"c_s": 2.6,
+		"s_s": 3770,
+		"site": "http://www.primariabraesti.ro/",
+		"c_vp": 0
 	},
 	"BUTEA": {
 		"partid": "PSD",
@@ -101,14 +125,22 @@ detalii_primarii = {
 		"s_vp": 5075,
 		"c_s": 3,
 		"s_s": 4350,
-		"populatie": 4336
+		"populatie": 4336,
+		"site": "http://primaria-butea.xyz/"
 	},
 	"CEPLENITA": {
 		"partid": "PNL",
 		"type": "Comuna",
-		"raspuns": null,
+		"raspuns": "./raspunsuri_primarii/Ceplenita.xls",
 		"primar": "Laiu Dumitru",
-		"populatie": 4418
+		"populatie": 4418,
+		"c_p": 5.625,
+		"s_p": 8156,
+		"c_vp": 4.375,
+		"s_vp": 6344,
+		"c_s": 3.48,
+		"s_s": 5046,
+		"site": "http://www.primariaceplenita.ro/"
 	},
 	"CIOHORANI": {
 		"partid": "PSD",
@@ -121,7 +153,8 @@ detalii_primarii = {
 		"s_vp": 5438,
 		"s_s": 4350,
 		"c_s": 3,
-		"populatie": 2015
+		"populatie": 2015,
+		"site": "http://www.comunaciohorani.ro/"
 	},
 	"CIORTESTI": {
 		"partid": "PNL",
@@ -134,13 +167,13 @@ detalii_primarii = {
 		"s_vp": 5075,
 		"c_s": 3.45,
 		"s_s": 5003,
-		"populatie": 4324
+		"populatie": 4324,
+		"site": "http://www.primariaciortesti.ro/"
 	},
 	"CIUREA": {
 		"partid": "PSD",
-		"partial": true,
 		"type": "Comuna",
-		"raspuns": ["./raspunsuri_primarii/Ciurea 1.bmp", "./raspunsuri_primarii/Ciurea 2.bmp", "./raspunsuri_primarii/Ciurea 3.bmp"],
+		"raspuns": ["./raspunsuri_primarii/Ciurea 1.bmp", "./raspunsuri_primarii/Ciurea 2.bmp", "./raspunsuri_primarii/Ciurea 3.bmp", "./raspunsuri_primarii/Ciurea 4.bmp", "./raspunsuri_primarii/Ciurea 5.bmp", "./raspunsuri_primarii/Ciurea 6.bmp", "./raspunsuri_primarii/Ciurea 7.bmp"],
 		"primar": "Lupu Catalin",
 		"s_p": 7975,
 		"c_p": 5.5,
@@ -148,7 +181,8 @@ detalii_primarii = {
 		"c_vp": 4.5,
 		"s_s": 5583,
 		"c_s": 3.85,
-		"populatie": 14177
+		"populatie": 14177,
+		"site": "http://www.comunaciurea.ro/"
 	},
 	"COARNELE CAPREI": {
 		"partid": "PSD",
@@ -161,7 +195,8 @@ detalii_primarii = {
 		"s_vp": 5075,
 		"c_s": 3.2,
 		"s_s": 4640,
-		"populatie": 3057
+		"populatie": 3057,
+		"site": "https://coarnelecaprei.ro/"
 	},
 	"COMARNA": {
 		"partid": "PNL",
@@ -174,7 +209,8 @@ detalii_primarii = {
 		"s_vp": 5800,
 		"s_s": 4640,
 		"c_s": 3.2,
-		"populatie": 5405
+		"populatie": 5405,
+		"site": "http://www.primariacomarna.ro/"
 	},
 	"COSTESTI": {
 		"partid": "PSD",
@@ -186,8 +222,9 @@ detalii_primarii = {
 		"s_vp": 4828.5,
 		"c_vp": 3.33,
 		"s_s": null,
-		"c_s": null,
-		"populatie": 1849
+		"c_s": 0,
+		"populatie": 1849,
+		"site": "http://www.primariacomuneicostesti.ro/"
 	},
 	"COSTULENI": {
 		"partid": "UNPR",
@@ -197,7 +234,11 @@ detalii_primarii = {
 		"populatie": 5065,
 		"s_p": 0,
 		"s_vp": 0,
-		"s_s": 0
+		"s_s": 0,
+		"c_p": 0,
+		"c_vp": 0,
+		"c_s": 0,
+		"site": "http://www.costuleni.primarii-iasi.ro/"
 	},
 	"COTNARI": {
 		"partid": "PSD",
@@ -210,12 +251,13 @@ detalii_primarii = {
 		"c_vp": 4,
 		"s_s": 5655,
 		"c_s": 3.9,
-		"populatie": 7999
+		"populatie": 7999,
+		"site": "http://www.primaria-cotnari.ro/"
 	},
 	"COZMESTI": {
 		"partid": "PSD",
 		"type": "Comuna",
-		"raspuns": ["./raspunsuri_primarii/Cozmesti 1.jpeg","./raspunsuri_primarii/Cozmesti 2.jpeg","./raspunsuri_primarii/Cozmesti 3.jpeg","./raspunsuri_primarii/Cozmesti 4.jpeg","./raspunsuri_primarii/Cozmesti 5.jpeg","./raspunsuri_primarii/Cozmesti 6.jpeg"],
+		"raspuns": ["./raspunsuri_primarii/Cozmesti 1.jpeg", "./raspunsuri_primarii/Cozmesti 2.jpeg", "./raspunsuri_primarii/Cozmesti 3.jpeg", "./raspunsuri_primarii/Cozmesti 4.jpeg", "./raspunsuri_primarii/Cozmesti 5.jpeg", "./raspunsuri_primarii/Cozmesti 6.jpeg"],
 		"primar": "Baltag Petrica",
 		"s_p": 6525,
 		"c_p": 4.5,
@@ -223,15 +265,22 @@ detalii_primarii = {
 		"c_vp": 3.5,
 		"s_s": 5075,
 		"c_s": 3.5,
-		"populatie": 2894
+		"populatie": 2894,
+		"site": "http://www.comunacozmesti.ro/"
 	},
 	"CRISTESTI": {
 		"partid": "PSD",
 		"type": "Comuna",
-		"raspuns": null,
+		"raspuns": "./raspunsuri_primarii/Cristesti.doc",
 		"primar": "Bolohan Constantin",
 		"populatie": 4105,
-		"s_s": 0
+		"s_s": 5075,
+		"c_p": 4.5,
+		"s_p": 6525,
+		"c_vp": 3.5,
+		"s_vp": 5075,
+		"c_s": 3.5,
+		"site": "http://www.primariacomuneicristesti.ro/"
 	},
 	"CUCUTENI": {
 		"partid": "PSD",
@@ -243,7 +292,9 @@ detalii_primarii = {
 		"c_vp": 3,
 		"s_vp": 4350,
 		"c_s": 2.97,
-		"s_s": 4306.5
+		"s_s": 4306.5,
+		"s_p": 5800,
+		"site": "http://www.primariacucuteni.ro/"
 	},
 	"DAGATA": {
 		"partid": "PNL",
@@ -251,8 +302,13 @@ detalii_primarii = {
 		"raspuns": "./raspunsuri_primarii/Dagata.pdf",
 		"populatie": 4955,
 		"primar": "Damaschin Mirel",
-		"s_vp": 0,
-		"s_s": 0
+		"s_vp": 5075,
+		"s_s": 5021.35,
+		"c_p": 4.5,
+		"s_p": 6525,
+		"c_vp": 3.5,
+		"c_s": 3.463,
+		"site": "http://primariadagata.ro/"
 	},
 	"DELENI": {
 		"partid": "PNL",
@@ -265,7 +321,8 @@ detalii_primarii = {
 		"c_vp": 4.5,
 		"s_vp": 6525,
 		"c_s": 4.25,
-		"s_s": 6162.5
+		"s_s": 6162.5,
+		"site": "http://comunadeleni.com/"
 	},
 	"DOBROVAT": {
 		"partid": "PSD",
@@ -277,7 +334,10 @@ detalii_primarii = {
 		"primar": "Martinus Catalin-iulian",
 		"s_vp": 0,
 		"c_s": 3,
-		"s_s": 4350
+		"s_s": 4350,
+		"c_p": 0,
+		"c_vp": 0,
+		"site": "http://primariadobrovat.ro/"
 	},
 	"DOLHESTI": {
 		"partid": "PNL",
@@ -290,7 +350,8 @@ detalii_primarii = {
 		"c_vp": 3,
 		"s_vp": 4350,
 		"c_s": 2.98,
-		"s_s": 4321
+		"s_s": 4321,
+		"site": "http://www.dolhesti-iasi.ro/"
 	},
 	"DRAGUSENI": {
 		"partid": "PSD",
@@ -303,7 +364,8 @@ detalii_primarii = {
 		"c_vp": 3,
 		"s_vp": 4350,
 		"c_s": 2.9,
-		"s_s": 4205
+		"s_s": 4205,
+		"site": "http://www.comunadraguseni.ro/index.php"
 	},
 	"DUMESTI": {
 		"partid": "PSD",
@@ -313,7 +375,10 @@ detalii_primarii = {
 		"s_p": 0,
 		"primar": "Sabaiduc Mihai",
 		"s_vp": 0,
-		"s_s": 0
+		"s_s": 0,
+		"c_p": 0,
+		"c_vp": 0,
+		"c_s": 0
 	},
 	"ERBICENI": {
 		"partid": "PSD",
@@ -323,7 +388,10 @@ detalii_primarii = {
 		"s_p": 0,
 		"primar": "Lungu Ionel",
 		"s_vp": 0,
-		"s_s": 0
+		"s_s": 0,
+		"c_p": 0,
+		"c_vp": 0,
+		"c_s": 0
 	},
 	"FANTANELE": {
 		"partid": "PSD",
@@ -336,19 +404,22 @@ detalii_primarii = {
 		"c_vp": 3,
 		"s_vp": 4350,
 		"c_s": 3.99,
-		"s_s": 5785.5
+		"s_s": 5785.5,
+		"site": "http://comunafantaneleiasi.ro/"
 	},
 	"FOCURI": {
 		"partid": "PSD",
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/Focuri.JPG",
 		"populatie": 4092,
-		"s_p": 0,
+		"s_p": 6525,
 		"primar": "Macovei Vasile",
-		"c_vp": 0,
-		"s_vp": 0,
-		"c_s": 0,
-		"s_s": 0
+		"c_vp": 3.5,
+		"s_vp": 5075,
+		"c_s": 3.45,
+		"s_s": 5002.5,
+		"c_p": 4.5,
+		"site": "http://comunafocuri.ro/"
 	},
 	"GOLAIESTI": {
 		"partid": "PSD",
@@ -361,7 +432,8 @@ detalii_primarii = {
 		"c_vp": 3.5,
 		"s_vp": 5075,
 		"c_s": 3.49,
-		"s_s": 5060.5
+		"s_s": 5060.5,
+		"site": "http://www.primariagolaiesti.ro/"
 	},
 	"GORBAN": {
 		"partid": "PSD",
@@ -373,7 +445,7 @@ detalii_primarii = {
 		"primar": "Rotaru Danut",
 		"c_vp": 3.5,
 		"s_vp": 5075,
-		"c_s": null,
+		"c_s": 0,
 		"s_s": null
 	},
 	"GRAJDURI": {
@@ -387,7 +459,8 @@ detalii_primarii = {
 		"c_vp": 4,
 		"s_vp": 5800,
 		"c_s": 3.86,
-		"s_s": 5597
+		"s_s": 5597,
+		"site": "http://www.primariagrajduri.ro/"
 	},
 	"GROPNITA": {
 		"partid": "PSD",
@@ -423,7 +496,11 @@ detalii_primarii = {
 		"s_p": 0,
 		"primar": "Anton Iosif",
 		"s_vp": 0,
-		"s_s": 0
+		"s_s": 0,
+		"c_p": 0,
+		"c_vp": 0,
+		"c_s": 0,
+		"site": "http://www.primariahalaucesti.ro/"
 	},
 	"HARMANESTI": {
 		"partid": "PNL",
@@ -436,7 +513,8 @@ detalii_primarii = {
 		"c_vp": 3,
 		"s_vp": 4350,
 		"c_s": 2.99,
-		"s_s": 4335.5
+		"s_s": 4335.5,
+		"site": "http://www.primaria-harmanesti.ro/"
 	},
 	"HARLAU": {
 		"partid": "PSD",
@@ -449,7 +527,8 @@ detalii_primarii = {
 		"c_vp": 5,
 		"s_vp": 7250,
 		"c_s": 4.25,
-		"s_s": 6162.5
+		"s_s": 6162.5,
+		"site": "http://primaria-hirlau.ro/"
 	},
 	"HELESTENI": {
 		"partid": "PSD",
@@ -462,7 +541,8 @@ detalii_primarii = {
 		"c_vp": 3,
 		"s_vp": 4350,
 		"c_s": 2.9,
-		"s_s": 4205
+		"s_s": 4205,
+		"site": "http://www.primariahelesteni.ro/"
 	},
 	"HOLBOCA": {
 		"partid": "PSD",
@@ -475,7 +555,8 @@ detalii_primarii = {
 		"c_vp": 4.5,
 		"s_vp": 6525,
 		"c_s": 4.47,
-		"s_s": 6481.5
+		"s_s": 6481.5,
+		"site": "http://www.comunaholboca.ro/"
 	},
 	"HORLESTI": {
 		"partid": "PSD",
@@ -487,8 +568,9 @@ detalii_primarii = {
 		"primar": "Cadar Mihai",
 		"c_vp": 3.5,
 		"s_vp": 5075,
-		"c_s": null,
-		"s_s": null
+		"c_s": 0,
+		"s_s": null,
+		"site": "http://comunahorlesti.ro/"
 	},
 	"IASI": {
 		"partid": "PSD",
@@ -501,7 +583,8 @@ detalii_primarii = {
 		"c_vp": 8,
 		"s_vp": 11600,
 		"c_s": null,
-		"s_s": null
+		"s_s": null,
+		"site": "http://www.primaria-iasi.ro/"
 	},
 	"ION NECULCE": {
 		"partid": "PSD",
@@ -514,7 +597,8 @@ detalii_primarii = {
 		"c_vp": 4,
 		"s_vp": 5800,
 		"c_s": 4,
-		"s_s": 5800
+		"s_s": 5800,
+		"site": "https://primaria-ionneculce.ro/"
 	},
 	"IPATELE": {
 		"partid": "PSD",
@@ -526,17 +610,23 @@ detalii_primarii = {
 		"primar": "Postarnac Costica",
 		"s_vp": 0,
 		"c_s": 2.9,
-		"s_s": 4205
+		"s_s": 4205,
+		"c_p": 0,
+		"c_vp": 0
 	},
 	"LESPEZI": {
 		"partid": "PNL",
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/Lespezi.doc",
 		"populatie": 6032,
-		"s_p": 0,
+		"s_p": 9063,
 		"primar": "Lazar Ioan",
-		"s_vp": 0,
-		"s_s": 0
+		"s_vp": 7250,
+		"s_s": 5727.5,
+		"c_p": 6.25,
+		"c_vp": 5,
+		"c_s": 3.95,
+		"site": "http://www.primarialespezi.ro/"
 	},
 	"LETCANI": {
 		"partid": "PNL",
@@ -549,7 +639,8 @@ detalii_primarii = {
 		"c_vp": 4,
 		"s_vp": 5800,
 		"c_s": 3.8,
-		"s_s": 5510
+		"s_s": 5510,
+		"site": "http://comunaletcani.ro/"
 	},
 	"LUNGANI": {
 		"partid": "PSD",
@@ -562,12 +653,22 @@ detalii_primarii = {
 		"c_vp": 4,
 		"s_vp": 5800,
 		"c_s": 3.999,
-		"s_s": 5798.55
+		"s_s": 5798.55,
+		"site": "http://lungani.primarii-iasi.ro/"
 	},
 	"MADIRJAC": {
 		"partid": "UNPR",
 		"type": "Comuna",
-		"raspuns": null
+		"raspuns": null,
+		"populatie": 1681,
+		"s_p": 0,
+		"primar": "Ghebuta Dan",
+		"s_vp": 0,
+		"s_s": 0,
+		"site": "http://www.madarjac.primarii-iasi.ro/",
+		"c_p": 0,
+		"c_vp": 0,
+		"c_s": 0
 	},
 	"MIRCESTI": {
 		"partid": "PNL",
@@ -580,17 +681,22 @@ detalii_primarii = {
 		"c_vp": 3.5,
 		"s_vp": 5075,
 		"c_s": 3.48,
-		"s_s": 5046
+		"s_s": 5046,
+		"site": "http://www.comunamircesti.ro/"
 	},
 	"MIRONEASA": {
 		"partid": "PNL",
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/Mironeasa.pdf",
 		"populatie": 5625,
-		"s_p": 0,
+		"s_p": 7250,
 		"primar": "Curcudel Elena",
-		"s_vp": 0,
-		"s_s": 0
+		"s_vp": 5800,
+		"s_s": 5756.5,
+		"c_p": 5,
+		"c_vp": 4,
+		"c_s": 3.97,
+		"site": "http://www.mironeasa.webgarden.ro/"
 	},
 	"MIROSLAVA": {
 		"partid": "PNL",
@@ -600,7 +706,11 @@ detalii_primarii = {
 		"s_p": 0,
 		"primar": "Nita Dan",
 		"s_vp": 0,
-		"s_s": 0
+		"s_s": 0,
+		"site": "http://www.primariamiroslava.ro/",
+		"c_p": 0,
+		"c_vp": 0,
+		"c_s": 0
 	},
 	"MIROSLOVESTI": {
 		"partid": "UNPR",
@@ -613,7 +723,8 @@ detalii_primarii = {
 		"c_vp": 3.5,
 		"s_vp": 5075,
 		"c_s": 3.4,
-		"s_s": 4930
+		"s_s": 4930,
+		"site": "https://www.comunamiroslovesti.ro/"
 	},
 	"MOGOSESTI": {
 		"partid": "PSD",
@@ -626,7 +737,8 @@ detalii_primarii = {
 		"c_vp": 4,
 		"s_vp": 5800,
 		"c_s": 3,
-		"s_s": 4988
+		"s_s": 4988,
+		"site": "http://www.mogosesti-primaria.ro/"
 	},
 	"MOGOSESTI-SIRET": {
 		"partid": "PNL",
@@ -639,7 +751,8 @@ detalii_primarii = {
 		"c_vp": 3.5,
 		"s_vp": 5075,
 		"c_s": 3.49,
-		"s_s": 5060.5
+		"s_s": 5060.5,
+		"site": "http://www.mogosesti-siret.ro/"
 	},
 	"MOSNA": {
 		"partid": "PSD",
@@ -652,7 +765,8 @@ detalii_primarii = {
 		"c_vp": 4,
 		"s_vp": 5800,
 		"c_s": 3.5,
-		"s_s": 5075
+		"s_s": 5075,
+		"site": "http://www.mosnaiasi.ro/"
 	},
 	"MOTCA": {
 		"partid": "PSD",
@@ -662,7 +776,11 @@ detalii_primarii = {
 		"s_p": 0,
 		"primar": "Hobinca Constantin-serioja",
 		"s_vp": 0,
-		"s_s": 0
+		"s_s": 0,
+		"site": "http://comunamotca.ro/",
+		"c_p": 0,
+		"c_vp": 0,
+		"c_s": 0
 	},
 	"MOVILENI": {
 		"partid": "PSD",
@@ -674,8 +792,9 @@ detalii_primarii = {
 		"primar": "Plumbu Mihai",
 		"c_vp": 3.5,
 		"s_vp": 5075,
-		"c_s": null,
-		"s_s": null
+		"c_s": 0,
+		"s_s": null,
+		"site": "http://www.primariamovileni.ro/"
 	},
 	"OTELENI": {
 		"partid": "PNL",
@@ -688,7 +807,8 @@ detalii_primarii = {
 		"c_vp": 3.5,
 		"s_vp": 5075,
 		"c_s": 3.4,
-		"s_s": 4930
+		"s_s": 4930,
+		"site": "http://primariaoteleni.ro/"
 	},
 	"PASCANI": {
 		"partid": "PSD",
@@ -700,7 +820,9 @@ detalii_primarii = {
 		"primar": "Dumitru Pantazi",
 		"c_vp": 5.5,
 		"s_vp": 7975,
-		"s_s": 0
+		"s_s": 0,
+		"site": "http://primariapascani.ro/primarie/",
+		"c_s": 0
 	},
 	"PLUGARI": {
 		"partid": "PNL",
@@ -712,18 +834,22 @@ detalii_primarii = {
 		"primar": "Mursa Paul",
 		"c_vp": 4.375,
 		"s_vp": 6344,
-		"s_s": 0
+		"s_s": 0,
+		"site": "http://comunaplugari.ro/",
+		"c_s": 0
 	},
 	"PODU ILOAIEI": {
 		"partid": "PSD",
 		"type": "Orasul",
-		"raspuns": null,
+		"raspuns": "./raspunsuri_primarii/Podu ilioaiei.pdf",
 		"populatie": 11003,
-		"s_p": 0,
+		"s_p": 8700,
 		"primar": "Gabi Constantin Istrate",
-		"c_vp": 0,
-		"s_vp": 0,
-		"s_s": 0
+		"c_vp": 5,
+		"s_vp": 7250,
+		"s_s": 5474,
+		"c_p": 6,
+		"c_s": 3.77
 	},
 	"POPESTI": {
 		"partid": "PNL",
@@ -733,7 +859,11 @@ detalii_primarii = {
 		"s_p": 0,
 		"primar": "Lupu Vasile",
 		"s_vp": 0,
-		"s_s": 0
+		"s_s": 0,
+		"c_p": 0,
+		"c_vp": 0,
+		"c_s": 0,
+		"site": "http://primariapopestiiasi.ro/"
 	},
 	"POPRICANI": {
 		"partid": "PSD",
@@ -746,7 +876,8 @@ detalii_primarii = {
 		"c_vp": 4,
 		"s_vp": 5800,
 		"c_s": 3.9,
-		"s_s": 5655
+		"s_s": 5655,
+		"site": "http://primariapopricani.ro/"
 	},
 	"PRISACANI": {
 		"partid": "PSD",
@@ -759,7 +890,8 @@ detalii_primarii = {
 		"c_vp": 3.5,
 		"s_vp": 5075,
 		"c_s": 3.38,
-		"s_s": 4901
+		"s_s": 4901,
+		"site": "http://www.prisacani.ro/"
 	},
 	"PROBOTA": {
 		"partid": "PNL",
@@ -772,7 +904,8 @@ detalii_primarii = {
 		"c_vp": 3.5,
 		"s_vp": 5075,
 		"c_s": 3.3,
-		"s_s": 4785
+		"s_s": 4785,
+		"site": "http://www.primariaprobota.ro/"
 	},
 	"RACHITENI": {
 		"partid": "PNL",
@@ -782,7 +915,11 @@ detalii_primarii = {
 		"s_p": 0,
 		"primar": "Dobos Petre",
 		"s_vp": 0,
-		"s_s": 0
+		"s_s": 0,
+		"c_p": 0,
+		"c_vp": 0,
+		"c_s": 0,
+		"site": "http://primariarachiteni.ro/"
 	},
 	"RADUCANENI": {
 		"partid": "PSD",
@@ -795,17 +932,22 @@ detalii_primarii = {
 		"c_vp": 4,
 		"s_vp": 5800,
 		"c_s": 3.72,
-		"s_s": 5394
+		"s_s": 5394,
+		"site": "https://www.comunaraducaneni.ro/"
 	},
 	"REDIU": {
 		"partid": "PNL",
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/Rediu.pdf",
 		"populatie": 5959,
-		"s_p": 0,
+		"s_p": 7250,
 		"primar": "Haidau Vasile",
-		"s_vp": 0,
-		"s_s": 0
+		"s_vp": 5800,
+		"s_s": 5046,
+		"c_p": 5,
+		"c_vp": 4,
+		"c_s": 3.48,
+		"site": "http://www.primariarediu.ro/"
 	},
 	"ROMANESTI": {
 		"partid": "PNL",
@@ -816,7 +958,9 @@ detalii_primarii = {
 		"s_p": 0,
 		"primar": "Stegariu Ioan",
 		"s_vp": 0,
-		"s_s": 0
+		"s_s": 0,
+		"c_vp": 0,
+		"c_s": 0
 	},
 	"ROSCANI": {
 		"partid": "PSD",
@@ -829,7 +973,8 @@ detalii_primarii = {
 		"c_vp": 3,
 		"s_vp": 4350,
 		"c_s": 2.9,
-		"s_s": 4205
+		"s_s": 4205,
+		"site": "http://www.primariaroscani.ro/"
 	},
 	"RUGINOASA": {
 		"partid": "PSD",
@@ -842,7 +987,8 @@ detalii_primarii = {
 		"c_vp": 4,
 		"s_vp": 5800,
 		"c_s": 3.99,
-		"s_s": 5785.5
+		"s_s": 5785.5,
+		"site": "http://primaria-ruginoasa.ro/"
 	},
 	"SCANTEIA": {
 		"partid": "PSD",
@@ -855,7 +1001,8 @@ detalii_primarii = {
 		"c_vp": 4,
 		"s_vp": 5800,
 		"c_s": 3.75,
-		"s_s": 5437.5
+		"s_s": 5437.5,
+		"site": "http://www.primariascinteia.ro/"
 	},
 	"SCHEIA": {
 		"partid": "PSD",
@@ -868,7 +1015,8 @@ detalii_primarii = {
 		"c_vp": 3.5,
 		"s_vp": 5075,
 		"c_s": 3.4,
-		"s_s": 4930
+		"s_s": 4930,
+		"site": "http://www.scheia.ro/"
 	},
 	"SCHITU DUCA": {
 		"partid": "PSD",
@@ -878,17 +1026,25 @@ detalii_primarii = {
 		"s_p": 0,
 		"primar": "Mihalache Mihai",
 		"s_vp": 0,
-		"s_s": 0
+		"s_s": 0,
+		"c_p": 0,
+		"c_vp": 0,
+		"c_s": 0,
+		"site": "http://primariaschituduca.ro/"
 	},
 	"SCOBINTI": {
 		"partid": "PSD",
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/Scobinti.pdf",
 		"populatie": 7681,
-		"s_p": 0,
+		"s_p": 7250,
 		"primar": "Hritcu Gheorghe",
-		"s_vp": 0,
-		"s_s": 0
+		"s_vp": 5800,
+		"s_s": 4712.5,
+		"c_p": 5,
+		"c_vp": 4,
+		"c_s": 3.25,
+		"site": "http://www.primariascobinti.ro/"
 	},
 	"SINESTI": {
 		"partid": "PNL",
@@ -901,7 +1057,8 @@ detalii_primarii = {
 		"c_vp": 3.5,
 		"s_vp": 5075,
 		"c_s": 3.45,
-		"s_s": 5002.5
+		"s_s": 5002.5,
+		"site": "http://www.primariasinesti.ro/"
 	},
 	"SIPOTE": {
 		"partid": "PSD",
@@ -913,7 +1070,9 @@ detalii_primarii = {
 		"primar": "Malii Dorin- Mircea",
 		"c_vp": 4,
 		"s_vp": 5800,
-		"s_s": 0
+		"s_s": 0,
+		"site": "http://www.primariasipote.ro/",
+		"c_s": 0
 	},
 	"SIRETEL": {
 		"partid": "PNL",
@@ -923,12 +1082,25 @@ detalii_primarii = {
 		"s_p": 0,
 		"primar": "Ancuta Gheorghe",
 		"s_vp": 0,
-		"s_s": 0
+		"s_s": 0,
+		"c_p": 0,
+		"c_vp": 0,
+		"c_s": 0,
+		"site": "https://www.siretel.ro/"
 	},
 	"STOLNICENI-PRAJESCU": {
 		"partid": "PSD",
 		"type": "Comuna",
-		"raspuns": "./raspunsuri_primarii/Stolniceni.pdf"
+		"raspuns": "./raspunsuri_primarii/Stolniceni.pdf",
+		"populatie": 5533,
+		"c_p": 5,
+		"s_p": 7250,
+		"primar": "Hugianu Costel",
+		"c_vp": 4,
+		"s_vp": 5800,
+		"c_s": 3.98,
+		"s_s": 5771,
+		"site": "https://www.stolniceni.ro/"
 	},
 	"STRUNGA": {
 		"partid": "PSD",
@@ -938,7 +1110,11 @@ detalii_primarii = {
 		"s_p": 0,
 		"primar": "Lazar Mariana",
 		"s_vp": 0,
-		"s_s": 0
+		"s_s": 0,
+		"c_p": 0,
+		"c_vp": 0,
+		"c_s": 0,
+		"site": "http://primaria-strunga.ro/"
 	},
 	"TANSA": {
 		"partid": "PNL",
@@ -949,7 +1125,11 @@ detalii_primarii = {
 		"s_p": 0,
 		"primar": "Voinescu Daniel",
 		"s_vp": 0,
-		"s_s": 0
+		"s_s": 0,
+		"c_p": 0,
+		"c_vp": 0,
+		"c_s": 0,
+		"site": "http://www.primariatansa.ro/"
 	},
 	"TARGU FRUMOS": {
 		"partid": "PSD",
@@ -962,17 +1142,22 @@ detalii_primarii = {
 		"c_vp": 5,
 		"s_vp": 7250,
 		"c_s": 3.95,
-		"s_s": 5727.5
+		"s_s": 5727.5,
+		"site": "http://primariatgfrumos.ro/"
 	},
 	"TATARUSI": {
 		"partid": "PSD",
 		"type": "Comuna",
 		"raspuns": "./raspunsuri_primarii/Tatarusi.pdf",
 		"populatie": 5650,
-		"s_p": 0,
+		"s_p": 9063,
 		"primar": "Iosub Costel",
-		"s_vp": 0,
-		"s_s": 0
+		"s_vp": 7250,
+		"s_s": 7148,
+		"c_p": 6.25,
+		"c_vp": 5,
+		"c_s": 4.925,
+		"site": "http://www.tatarusi.ro/"
 	},
 	"TIBANA": {
 		"partid": "PSD",
@@ -984,7 +1169,9 @@ detalii_primarii = {
 		"primar": "Rotaru Gheorghe",
 		"c_vp": 4.08,
 		"s_vp": 5916,
-		"s_s": 0
+		"s_s": 7562,
+		"c_s": 5.21,
+		"site": " Spor confident"
 	},
 	"TIBANESTI": {
 		"partid": "PSD",
@@ -996,7 +1183,10 @@ detalii_primarii = {
 		"primar": "Cobuz Aurica",
 		"s_vp": 0,
 		"c_s": 4,
-		"s_s": 5800
+		"s_s": 5800,
+		"c_p": 0,
+		"c_vp": 0,
+		"site": "http://www.primariatibanesti.ro/"
 	},
 	"TIGANASI": {
 		"partid": "PSD",
@@ -1007,7 +1197,11 @@ detalii_primarii = {
 		"s_p": 0,
 		"primar": "Chirila Iulian",
 		"s_vp": 0,
-		"s_s": 0
+		"s_s": 0,
+		"c_p": 0,
+		"c_vp": 0,
+		"c_s": 0,
+		"site": "http://www.primariatiganasi.ro/"
 	},
 	"TODIRESTI": {
 		"partid": "PSD",
@@ -1017,7 +1211,11 @@ detalii_primarii = {
 		"s_p": 0,
 		"primar": "Droanca Ovidiu",
 		"s_vp": 0,
-		"s_s": 0
+		"s_s": 0,
+		"c_p": 0,
+		"c_vp": 0,
+		"c_s": 0,
+		"site": "http://www.primariatodiresti.ro/"
 	},
 	"TOMESTI": {
 		"partid": "PSD",
@@ -1030,7 +1228,8 @@ detalii_primarii = {
 		"c_vp": 4.5,
 		"s_vp": 6525,
 		"c_s": 4,
-		"s_s": 5800
+		"s_s": 5800,
+		"site": "http://www.comuna-tomesti.ro/"
 	},
 	"TRIFESTI": {
 		"partid": "PNL",
@@ -1040,7 +1239,11 @@ detalii_primarii = {
 		"s_p": 0,
 		"primar": "Ivanuca Alexandru",
 		"s_vp": 0,
-		"s_s": 0
+		"s_s": 0,
+		"c_p": 0,
+		"c_vp": 0,
+		"c_s": 0,
+		"site": "http://primariatrifestiiasi.ro/"
 	},
 	"TUTORA": {
 		"partid": "UNPR",
@@ -1053,7 +1256,8 @@ detalii_primarii = {
 		"c_vp": 3,
 		"s_vp": 4350,
 		"c_s": 3,
-		"s_s": 4350
+		"s_s": 4350,
+		"site": "http://www.primariatutora.ro/"
 	},
 	"UNGHENI": {
 		"partid": "PSD",
@@ -1066,7 +1270,8 @@ detalii_primarii = {
 		"c_vp": 3.5,
 		"s_vp": 5075,
 		"c_s": 3.49,
-		"s_s": 5060.5
+		"s_s": 5060.5,
+		"site": "http://www.comunaungheni.ro/"
 	},
 	"VALEA LUPULUI": {
 		"partid": "PSD",
@@ -1079,7 +1284,8 @@ detalii_primarii = {
 		"c_vp": 4,
 		"s_vp": 5800,
 		"c_s": 3.97,
-		"s_s": 5756.5
+		"s_s": 5756.5,
+		"site": "http://comuna-valealupului.ro/"
 	},
 	"VALEA SEACA": {
 		"partid": "PSD",
@@ -1092,7 +1298,8 @@ detalii_primarii = {
 		"c_vp": 4,
 		"s_vp": 5800,
 		"c_s": 3.97,
-		"s_s": 5756.5
+		"s_s": 5756.5,
+		"site": "http://primariavaleaseaca.ro/"
 	},
 	"VANATORI": {
 		"partid": "PSD",
@@ -1102,7 +1309,11 @@ detalii_primarii = {
 		"s_p": 0,
 		"primar": "Lupu Constantin",
 		"s_vp": 0,
-		"s_s": 0
+		"s_s": 0,
+		"c_p": 0,
+		"c_vp": 0,
+		"c_s": 0,
+		"site": "http://www.primariavanatori.ro/"
 	},
 	"VICTORIA": {
 		"partid": "PNL",
@@ -1115,7 +1326,8 @@ detalii_primarii = {
 		"c_vp": 4.375,
 		"s_vp": 6344,
 		"c_s": 3.5,
-		"s_s": 5075
+		"s_s": 5075,
+		"site": "http://comunavictoria.ro/"
 	},
 	"VLADENI": {
 		"partid": "PSD",
@@ -1123,7 +1335,13 @@ detalii_primarii = {
 		"raspuns": null,
 		"populatie": 4434,
 		"s_p": 0,
-		"primar": "Brînzanu Catalin"
+		"primar": "Brînzanu Catalin",
+		"s_vp": 0,
+		"s_s": 0,
+		"c_p": 0,
+		"c_vp": 0,
+		"c_s": 0,
+		"site": "http://vladeni.primarii-iasi.ro/"
 	},
 	"VOINESTI": {
 		"partid": "PSD",
@@ -1132,7 +1350,11 @@ detalii_primarii = {
 		"populatie": 8046,
 		"c_p": 5,
 		"s_p": 7250,
-		"primar": "Dobreanu Gheorghe"
+		"primar": "Dobreanu Gheorghe",
+		"c_vp": 4,
+		"s_vp": 5800,
+		"c_s": 3.96,
+		"s_s": 5742,
+		"site": "http://primariavoinesti-iasi.ro/drupal/"
 	}
 }
-

@@ -18,7 +18,7 @@
 	<div id="legend">
 	<div id="title_selection">
 	<legend><h3>Selectie dupa:</h3></legend>
-	<button type="button" onclick="calculare_salarii()" id="b_venituri">Veniturile de la 1 Ianuarie 2018</button>
+	<button type="button" onclick="calculare_salarii()" id="b_venituri">Afiseaza veniturile inainte de 1 Ianuarie 2018</button>
 	
 	</div>
 	  <ul class="radio"> 
@@ -55,7 +55,7 @@
 		<div class="legend-section">
 			<input type="radio" id="opt_raspuns"
 		   name="selectie_primarii" value="raspuns" onclick="modifyMap(this.value)">
-			<label for="opt_raspuns">Raspuns</label> 
+			<label for="opt_raspuns">Existenta date</label> 
 			 <div class='legend-scale'>
 			  <ul class='legend-labels'>
 				<li><span style='background:aqua;'></span>DA</li>
@@ -80,7 +80,7 @@
 	<script>
       var map;
 	  var geoXmlDoc;
-	  var salarii_2018 = false;
+	  var salarii_2018 = true;
 	  var salariul_min = 1900;
 	  var infoview = null;
 	  
@@ -112,14 +112,14 @@
 		if(salarii_2018)
 		{
 			if( detalii_primarii[poly.title.toUpperCase()].c_p ) 
-				content+= "<h4> Salariu Primar: <b>" + detalii_primarii[poly.title.toUpperCase()].c_p * salariul_min + " lei</b></h4>";
+				content+= "<h4> Salariu Primar 2018: <b>" + detalii_primarii[poly.title.toUpperCase()].c_p * salariul_min + " lei</b></h4>";
 			else
 				content+= "<h4> Salariu:<b>N/A</b></h4>";
 		}
 		else
 		{
 			if( detalii_primarii[poly.title.toUpperCase()].s_p ) 
-				content+= "<h4> Salariu Primar: <b>" + detalii_primarii[poly.title.toUpperCase()].s_p + " lei</b></h4>";
+				content+= "<h4> Salariu Primar 2017: <b>" + detalii_primarii[poly.title.toUpperCase()].s_p + " lei</b></h4>";
 			else
 				content+= "<h4> Salariu:<b>N/A</b></h4>";
 		}	
@@ -324,8 +324,18 @@
 			det_p = "<div><span>Comuna:</span> " + nume_primarie + "</div><br/>";
 		if(detalii_primarii[temp_p].primar)
 			det_p += "<div><span>Primar:</span> " + detalii_primarii[temp_p].primar + "</div><br/>";
+		if(detalii_primarii[temp_p].c_p && salarii_2018 )
+			det_p += "<div><span>Salariu primar 2018:</span> " + detalii_primarii[temp_p].c_p*salariul_min + " lei</div><br/>";
+		if(detalii_primarii[temp_p].c_p == null || detalii_primarii[temp_p].c_p == 0)
+			det_p += "<div class='warning'><span>Salariu primar 2018:</span> date incomplete </div><br/>";
 		if(detalii_primarii[temp_p].partid)
-			det_p += "<div><span>Partid:</span> " + detalii_primarii[temp_p].partid + "</div><br/>";
+			det_p += "<div><span>Partid primar:</span> " + detalii_primarii[temp_p].partid + "</div><br/>";
+		if(detalii_primarii[temp_p].viceprimar)
+			det_p += "<div><span>Viceprimar:</span> " + detalii_primarii[temp_p].viceprimar + "</div><br/>";
+		if(detalii_primarii[temp_p].c_vp && salarii_2018 )
+			det_p += "<div><span>Salariu viceprimar 2018:</span> " + detalii_primarii[temp_p].c_vp*salariul_min + " lei</div><br/>";
+		if(detalii_primarii[temp_p].populatie)
+			det_p += "<div><span>Populatie 2015:</span> " + detalii_primarii[temp_p].populatie + " locuitori</div><br/>";
 		if(detalii_primarii[temp_p].raspuns)
 		{
 			var crt_rasp = detalii_primarii[temp_p].raspuns;
@@ -344,20 +354,15 @@
 				det_p += "</div><br/>";
 			}
 		}
-		if(detalii_primarii[temp_p].populatie)
-		{
-			det_p += "<div><span>Populatie:</span> " + detalii_primarii[temp_p].populatie + " locuitori</div><br/>";
-		}
 		
-		if(detalii_primarii[temp_p].Site)
+		if(detalii_primarii[temp_p].site)
 		{
-			det_p += "<div><span>site:</span> " + detalii_primarii[temp_p].site + "</div><br/>";
+			det_p += "<div><span>Site:</span> <a href='"+detalii_primarii[temp_p].site +"'> "+detalii_primarii[temp_p].site + "</a></div><br/>";
 		}
 		else
-			det_p += "<div><span>Site:</span> <a href='https://www.prefecturaiasi.ro/Prefectura%20Iasi/Tabel%20Primari.pdf'> detaliile primariei</a></div><br/>";
-			
+			det_p += "<div class='warning'><span>Site:</span>Nu exista</div>";			
 		var observatii_primarie = "";
-		if(detalii_primarii[temp_p].c_p == null || detalii_primarii[temp_p].c_vp == null ||detalii_primarii[temp_p].c_s == null  )
+		if(detalii_primarii[temp_p].c_p == 0 || detalii_primarii[temp_p].c_vp == 0 )
 		{
 			observatii_primarie = observatii_primarii.date_incomplete + '</br>';	
 		}
@@ -365,7 +370,7 @@
 		if(observatii_primarii[temp_p] )
 			observatii_primarie += observatii_primarii[temp_p]+ '</br>';
 		if(observatii_primarie)
-			det_p += "<div><span>Observatii:</span>" + observatii_primarie + "</div><br/>";
+			det_p += "<div class='info'><span>Observatii:</span>" + observatii_primarie + "</div><br/>";
 		document.getElementById('observatii_primarie').innerHTML = det_p;
 		
 	}
@@ -458,12 +463,12 @@
 		if(infoview)  infoview.close();
 		if(salarii_2018)
 		{
-			document.getElementById('b_venituri').firstChild.data = "Veniturile inainte de 1 Ianuarie 2018";
+			document.getElementById('b_venituri').firstChild.data = "Afiseaza veniturile inainte de 1 Ianuarie 2018";
 			salariul_min = 1900;
 		}
 		else
 		{
-			document.getElementById('b_venituri').firstChild.data = "Veniturile de la 1 Ianuarie 2018";
+			document.getElementById('b_venituri').firstChild.data = "Afiseaza veniturile de la 1 Ianuarie 2018";
 			salariul_min = 1450;
 		}
 		reset_page();
